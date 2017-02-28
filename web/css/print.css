@@ -1,0 +1,9 @@
+.garisB {
+	text-decoration: underline;
+	text-align: center;
+	font-size: small;
+	margin: 0px;
+	padding: 0px;
+	border: thin dotted #000000;
+	border-bottom: 1;
+}
