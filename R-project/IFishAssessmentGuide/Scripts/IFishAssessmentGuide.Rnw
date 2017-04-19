@@ -1,0 +1,382 @@
+\documentclass{report}
+\usepackage{geometry}
+\geometry{a4paper,textwidth=15.92cm,textheight=24.62cm}
+\usepackage{verbatim}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+%\usepackage[nodayofweek]{datetime}
+\usepackage[ddmmyy]{datetime}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{caption}
+
+\makeatletter
+\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
+\makeatother
+
+% following to define a new section style that takes less space
+\makeatletter % make "at" ("@") letter, important for the code that follows
+\renewcommand\chapter{\@startsection%
+{chapter}{1}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\makeatletter
+\renewcommand\section{\@startsection%
+{section}{2}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\setlength{\parskip}{1em}
+\renewcommand*\contentsname{Table of contents}
+
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or January
+  \or February
+  \or March
+  \or April
+  \or May
+  \or June
+  \or July
+  \or August
+  \or September
+  \or October
+  \or November
+  \or December
+  \fi}
+
+\renewcommand{\dateseparator}{}
+
+\definecolor{green}{rgb}{0,0.8,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{gray}{THE NATURE CONSERVANCY INDONESIA FISHERIES CONSERVATION PROGRAM \\ AR\_ASSESSMENTGUIDE\_{\today}}}
+\rfoot{\thepage}
+
+
+\begin{document}
+% use "echo=False" to remove R code from the output
+<<globaloptions,echo=FALSE>>=
+  opts_chunk$set(echo=FALSE, fig.path='/root/R-project/IFishAssessmentGuide/Plots/plot-', cache=FALSE)
+@
+
+\newgeometry{left=1cm,top=1cm,right=1cm,bottom=1cm}
+\input{/root/R-project/IFishAssessmentGuide/Texs/coverpage.tex}
+\restoregeometry
+
+\input{/root/R-project/IFishAssessmentGuide/Texs/innercoverpage.tex}
+\clearpage
+
+\tableofcontents
+
+\clearpage
+\newpage
+
+\large
+
+\chapter{Introduction}
+\input{/root/R-project/IFishAssessmentGuide/Texs/1_introduction.tex}
+
+\clearpage
+\newpage
+
+\chapter{Estimating Values of Key Life History Parameters}
+\input{/root/R-project/IFishAssessmentGuide/Texs/2_life_history_parameters.tex}
+
+\clearpage
+\newpage
+
+\chapter{A Simple Length-Based Assessment Tool}
+\input{/root/R-project/IFishAssessmentGuide/Texs/3_length_based.tex}
+
+\clearpage
+\newpage
+\setlength{\tabcolsep}{5pt}
+\captionsetup{width=1\textwidth, justification=centering}
+\setlength{\LTpost}{0pt}
+<<TableSPP2, cache=FALSE, fig.width=10, out.width='0.9\\linewidth', echo = FALSE, results = 'asis'>>=
+columnDesc <- paste(
+ paste(" ", sep=""),
+ paste("\\noindent{\\small{\\textbf{Nsample} is total sample including SWMS and CODRS data (mostly CODRS).", sep=""),
+ paste("\\textbf{Lx-codrs} = Largest specimen with verifiable ID and size from CODRS photo.", sep=""),
+ paste("\\textbf{Lmax} = maximum attainable total length at Indonesian lattitudes.", sep=""),
+ paste("\\textbf{Linf} = 0.9 * Lmax (with 10\\% dispersion around mean size in cohort).", sep=""),
+ paste("\\textbf{Lm50} = Size at 50\\% maturity.", sep=""),
+ paste("\\textbf{Lm50} = 0.59 * Linf for deep water lutjanidae (Newman et al., 2016).", sep=""),
+ paste("\\textbf{Lm50} = 0.46 * Linf for deep water Epinephelidae (Newman et al., 2016).", sep=""),
+ paste("\\textbf{Lm50} = 0.5 * Linf for Other Species (pooled literature).", sep=""),
+ paste("\\textbf{Lopt} = 1.33 * Lmat for range of demersals (Cope and Punt, 2009). All sizes in Total Length.}}", sep=""),
+ paste("\\clearpage", sep=""),
+ paste("\\newpage", sep=""),
+sep="\n");
+
+currentYear <- as.numeric(format(Sys.time(), "%Y"))
+spp3 <- data.frame();
+n1 <- 0;
+for(i in (unique(SPP2$fish_id))){
+   spx <- subset(SPP2,fish_id==i)
+   n1 <- n1 + 1;
+   spx$fish_rank <- paste0(n1)
+   spp3 <- rbind(spp3, spx)
+}
+
+spp3x <- spp3[,c("fish_rank", "fish_id", "fish_binary", "n", "largest_specimen_cm", "lmax", "linf", "lopt", "lmat")]
+colnames(spp3x) <- c("Rank", "ID#", "Species", "Nsample", "Lx-codrs", "Lmax", "Linf", "Lopt", "Lm50")
+print(xtable(spp3x, format="latex", align="lccccccccc", digits=c(0,0,0,0,0,0,0,0,0,0), caption = paste("Ranking and Sample Sizes of 50 Most Abundant Species \\\\in Indonesian Deep Water Hook-And-Line Fisheries", sep="")), caption.placement = 'top', 
+  size="\\small", include.rownames=FALSE, tabular.environment='longtable', floating=FALSE
+)
+
+cat(paste0(columnDesc));
+@
+
+\clearpage
+\newpage
+
+\chapter{Plotting Results From Length-Based Assessments}
+\input{/root/R-project/IFishAssessmentGuide/Texs/4_plotting_results.tex}
+
+\clearpage
+\newpage
+
+\chapter{Evaluating Results From Length-Based Assessments}
+\input{/root/R-project/IFishAssessmentGuide/Texs/5_evaluating_results.tex}
+
+\clearpage
+\newpage
+
+\chapter{Management Considerations}
+\input{/root/R-project/IFishAssessmentGuide/Texs/6_management_considerations.tex}
+
+\clearpage
+\newpage
+
+\chapter{References}
+\input{/root/R-project/IFishAssessmentGuide/Texs/7_references.tex}
+
+\clearpage
+\newpage
+
+\chapter{Catch Length Frequencies and Life History Parameter Values}
+\input{/root/R-project/IFishAssessmentGuide/Texs/8_lfd.tex}
+
+\clearpage
+\newpage
+
+\setlength{\tabcolsep}{5pt}
+\captionsetup{width=1\textwidth, justification=centering}
+\setlength{\LTpost}{0pt}
+<<TableSPP, cache=FALSE, fig.width=10, out.width='0.9\\linewidth', echo = FALSE, results = 'asis'>>=
+currentYear <- as.numeric(format(Sys.time(), "%Y"))
+spp2 <- data.frame()
+#for(i in sort((unique(SPP$fish_id)))){
+for(i in 1:50){
+   spx <- subset(SPP,fish_id==i)
+   spp2 <- rbind(spp2, spx)
+}
+
+spp2x <- spp2[,c("fish_id", "fish_binary", "fish_family", "n", "largest_specimen_cm", "lmax", "linf", "lopt", "lmat")]
+colnames(spp2x) <- c("ID#", "Species", "Family", "Nsample", "Lx-codrs", "Lmax", "Linf", "Lopt", "Lm50")
+print(xtable(spp2x, format="latex", align="lccccccccc", digits=c(0,0,0,0,0,0,0,0,0,0), caption = paste("Life History Parameters 100 Most Abundant Species Indonesian Deep Water Hook-And-Line Fisheries", sep="")), caption.placement = 'top', 
+  size="\\small", include.rownames=FALSE, tabular.environment='longtable', floating=FALSE
+)
+
+cat(paste0(columnDesc));
+
+spp3 <- data.frame()
+for(i in 51:100){
+   spx <- subset(SPP,fish_id==i)
+   spp3 <- rbind(spp3, spx)
+}
+
+spp3x <- spp3[,c("fish_id", "fish_binary", "fish_family", "n", "largest_specimen_cm", "lmax", "linf", "lopt", "lmat")]
+colnames(spp3x) <- c("ID#", "Species", "Family", "Nsample", "Lx-codrs", "Lmax", "Linf", "Lopt", "Lm50")
+print(xtable(spp3x, format="latex", align="lccccccccc", digits=c(0,0,0,0,0,0,0,0,0,0), caption = paste("(Continued from 8.1)\\\\Life History Parameters 100 Most Abundant Species Indonesian Deep Water Hook-And-Line Fisheries", sep="")), caption.placement = 'top', 
+  size="\\small", include.rownames=FALSE, tabular.environment='longtable', floating=FALSE
+)
+
+cat(paste0(columnDesc));
+@
+
+\clearpage
+\verbatimfont{\normalfont\rmfamily}
+\definecolor{fgcolor}{rgb}{0,0,0}
+<<LFD, cache=FALSE, fig.width=10, background='#ffffff', comment=NA, results='markup'>>=
+for(i in sort((unique(SPP$fish_id)))){
+    spx <- subset(SPP,fish_id==i)
+    
+    # Data from CODRS
+    dfCODRS <- subset(df,fish_id==i)
+
+    lowestx <- min(0.5*spx$lmat,min(dfCODRS$cm))
+    highestx <- 1.25*spx$lmax
+
+    ### START GENERATE GRAPH ###
+    gt <- paste("(ID #",spx$fish_id,") ",spx$fish_binary," (",spx$fish_family, "), n = ", formatC(nrow(dfCODRS),digits=0,format="d", big.mark=','), sep="")
+    Ltitle <- paste("(ID #",spx$fish_id,") Length frequency of ",spx$fish_binary," (",spx$fish_family, "), n = ", formatC(nrow(dfCODRS),digits=0,format="d", big.mark=','), sep="")
+    tmp1 <- hist(dfCODRS$cm,main=Ltitle,col="lightgrey",xlab="Total Length (cm)", xlim=c(lowestx,highestx), breaks=seq(0, max(dfCODRS$cm)+10, by=5))
+    yc_txt <- max(tmp1$counts) # gets the frequency of the mode
+    # Note: store the histogram in a variable to extract mode later on
+    # Add vertical lines with reference points
+    abline(v=spx$linf,col="blue",lwd=3,lty=2)
+    abline(v=spx$lmax,col="black",lwd=3,lty=4)
+    abline(v=spx$lopt,col="black",lwd=3,lty=1)
+    abline(v=spx$lmat,col="black",lwd=3,lty=5)
+    abline(v=spx$plotted_trade_limit_tl,col="red",lwd=3,lty=3)
+    # Add explanatory text to the vertical lines
+    text(spx$linf,yc_txt/2.2,"L-infinity",font=4, col="blue")
+    text(spx$lopt,yc_txt/1.8,"L-optimum",font=4, col="black")
+    text(spx$lmat,yc_txt/1.8,"L-maturity",font=4, col="black")
+    text(spx$lmax,yc_txt/1.8,"L-max",font=4, col="black")
+    text(spx$plotted_trade_limit_tl,yc_txt/2.2,"Trade Limit",font=4, col="red")
+    # Calculate percentages immature, small mature, large mature
+    perc_imm <- 100*length(dfCODRS$EcoSize[dfCODRS$EcoSize=="Immature" & !is.na(dfCODRS$EcoSize)])/length(dfCODRS$cm)
+    perc_smat <- 100*length(dfCODRS$EcoSize[dfCODRS$EcoSize=="SmallMature" & !is.na(dfCODRS$EcoSize)])/length(dfCODRS$cm)
+    perc_lmat <- 100*length(dfCODRS$EcoSize[dfCODRS$EcoSize=="LargeMature" | dfCODRS$EcoSize=="MegaSpawner" & !is.na(dfCODRS$EcoSize)])/length(dfCODRS$cm)
+    perc_megasp <- 100*length(dfCODRS$EcoSize[dfCODRS$EcoSize=="MegaSpawner" & !is.na(dfCODRS$EcoSize)])/length(dfCODRS$cm)
+    perc_yopt <- 100*length(dfCODRS$cm[dfCODRS$cm>(spx$lopt-(spx$lopt*0.1)) & dfCODRS$cm<(spx$lopt+(spx$lopt*0.1))])/length(dfCODRS$cm)
+    # Add percentages to the graph
+    text(spx$lmat-(spx$lmat-lowestx)/2,yc_txt,paste(formatC(perc_imm,digits=0,format="f"),"%"),font=2,cex=1.5)
+    text(spx$lopt-(spx$lopt-spx$lmat)/2,yc_txt,paste(formatC(perc_smat,digits=0,format="f"),"%"),font=2,cex=1.5)
+    text(highestx-(highestx-spx$lopt)/2,yc_txt,paste(formatC(perc_lmat,digits=0,format="f"),"%"),font=2,cex=1.5)
+
+    #### SPR START HERE
+    perc_SPR <- 0
+    text_SPR <- paste("unknown")
+
+    perc_BoverB0 <- 0
+    text_BoverB0 <- paste("unknown")
+
+    Mnat <- 0 # natural mortality 
+    Fmax <- 0 # fishing mortaltity
+    ratio_FvsM <- 0 # F vs M
+    text_FvsM <- paste("unknown")
+
+    # Calculate Von Bertalanffy growth paramenter K using L infinity and L opt (Froese and Binohlan 2000)
+    # Assuming an average water temp of 20C, see Froese & Pauly 2000 in Martinez-Andrade 2003
+    Mnat <- 10^(0.566-(0.718*log10(spx$linf))+0.02*20)
+
+    VBG_K <- (Mnat*spx$lopt)/(3*(spx$linf-spx$lopt))
+    VBG_K2 <- 2.15*(spx$linf^-0.46)
+
+# Insert picture of species below graph
+spName <- paste0(spx$fish_genus, "-", spx$fish_species)
+lastCharSpName <- substr(spName, nchar(spName), nchar(spName))
+if(lastCharSpName == ".") {
+ spName <- substr(spName, 1, nchar(spName)-1)
+}
+
+speciesPhotoLoc <- paste("/root/R-project/IFishAssessmentGuide/Images/Species/", spName, ".png", sep="");
+
+if(!file.exists(speciesPhotoLoc)){
+	speciesPhotoLoc <- paste("/root/R-project/IFishAssessmentGuide/Images/blank.jpg");
+}
+
+speciesPhoto <- paste(
+	paste(" ", sep=""),
+	paste("\\end{verbatim}", sep=""),
+	paste("\\end{kframe}", sep=""),
+	paste("\\includegraphics[scale=0.4]{", speciesPhotoLoc, "}", sep=""),
+	paste("\\begin{kframe}\\begin{verbatim}", sep=""),
+	sep="\n");
+
+
+    if(var(dfCODRS$cm) > 0 & nrow(dfCODRS) >= 50) {
+
+        # Calculate the mode of the LFD, using 5 cm bins
+        dfCODRS$cm_bin5 <- 5*round(dfCODRS$cm/5)
+        tmp <- table(as.vector(dfCODRS$cm_bin5))
+        lc <- min(as.numeric(names(tmp)[tmp==max(tmp)]))
+
+        d1 <- bheq2(len = dfCODRS$cm, Linf = spx$linf, K = VBG_K, Lc = lc[1], La = spx$linf,nboot = 200)
+
+        # Calculate SPR from growth parameters and Z, and M
+
+        d1$Mnat <- Mnat
+
+        # Generate vector with ages 1-100
+        age <- 1:100
+        popdf <- data.frame(age)
+        popdf$popF0 <- 1000*exp(-Mnat*age)
+        # Calculate mean length for each age
+        popdf$TL <- spx$linf*(1-exp(-VBG_K*age))
+        # Note: the following disregards that a's and b's were sometimes for FL instead of TL
+        popdf$BW <- spx$var_a*popdf$TL^spx$var_b
+        popdf$BiomassF0 <- popdf$BW * popdf$popF0
+        popdf$Mature <- ifelse(popdf$TL < spx$lmat,0,1)
+        popdf$SpBiomassF0 <- popdf$BiomassF0*popdf$Mature
+        SpBiomassF0 <- sum(popdf$SpBiomassF0)
+		BiomassF0 <- sum(popdf$BiomassF0)
+
+        # Calculate F, assume that recruitment to the fishery starts at the 1st percentile in the LFD,
+        # then increases linearly up to Lc
+        lc_sub <- quantile(dfCODRS$cm, c(.01), names=FALSE)
+        Fmax <- d1$Z-Mnat
+
+        # F increases linearly with length from 0 at lc_sub until Fmax at lc
+#        popdf$Fact <- cases(
+#            "0" = popdf$TL < lc_sub,
+#            "(popdf$TL*Fmax/(lc-lc_sub))-(lc_sub*Fmax/(lc-lc_sub))" = popdf$TL < lc,
+#            "Fmax" = TRUE)
+
+        popdf$Fact <- ifelse(popdf$TL < lc_sub,0,
+                     ifelse(popdf$TL < lc & popdf$TL>= lc_sub,(popdf$TL*Fmax/(lc-lc_sub))-(lc_sub*Fmax/(lc-lc_sub)),Fmax))
+
+        popdf$popFact[1] <- 1000*exp(-(Mnat+popdf$Fact[1])*1)
+        for(i in 2:100){
+            popdf$popFact[i] <- popdf$popFact[i-1]*exp(-(Mnat+popdf$Fact[i])*1)
+        }
+
+        popdf$BiomassFact <- popdf$BW * popdf$popFact
+        popdf$SpBiomassFact <- popdf$BiomassFact*popdf$Mature
+        SpBiomassFact <- sum(popdf$SpBiomassFact)
+        BiomassFact <- sum(popdf$BiomassFact)
+        SPR <- SpBiomassFact/SpBiomassF0
+        BoverB0 <- BiomassFact/BiomassF0
+        perc_SPR <- 100 * SPR
+        perc_BoverB0 <- 100*BoverB0
+        ratio_FvsM <- Fmax/Mnat
+
+        if(perc_SPR < 100) {
+            text_SPR <- paste(formatC(perc_SPR,digits=0,format="f"),sep=" ")
+        } else {
+            text_SPR <- paste("near 100")
+        }
+
+        if(perc_BoverB0 < 100) {
+            text_BoverB0 <- paste(formatC(perc_BoverB0,digits=0,format="f"),sep=" ")
+        } else {
+            text_BoverB0 <- paste("near 100")
+        }
+
+        if(ratio_FvsM > 0) {
+            text_FvsM <- paste(formatC(ratio_FvsM,digits=2,format="f"),sep=" ")
+        } else if(ratio_FvsM == 0) {
+            text_FvsM <- paste("unknown")
+        } else {
+            text_FvsM <- paste("near 0")
+        }
+        
+    }
+    #### SPR END HERE
+    # Add legend
+    legend("topright", bty="o", lty=c(3,5,1,2,4,0), col=c(2, 1, 1, 4, 1, 1), legend=c(paste("Trade Limit",formatC(spx$plotted_trade_limit_tl,digits=0,format="f"),"cm",sep=" "), paste("L-maturity",spx$lmat,"cm",sep=" "), paste("L-optimum",spx$lopt,"cm",sep=" "), paste("L-infinity",spx$linf,"cm",sep=" "), paste("L-max",spx$lmax,"cm",sep=" "), paste("SPR:", text_SPR, "%", sep=" ")), text.col = c(2, 1, 1, 4, 1, 1))
+
+    cat(paste(
+	paste(speciesPhoto, sep=""),
+	sep="\n"))
+}
+@
+
+\end{document}

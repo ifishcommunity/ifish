@@ -1,0 +1,1321 @@
+\documentclass{report}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{geometry}
+\geometry{a4paper,textwidth=15.92cm,textheight=24.62cm}
+\usepackage{verbatim}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+%\usepackage[nodayofweek]{datetime}
+\usepackage[ddmmyy]{datetime}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{caption}
+
+\makeatletter
+\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
+\makeatother
+
+% following to define a new section style that takes less space
+\makeatletter % make "at" ("@") letter, important for the code that follows
+\renewcommand\chapter{\@startsection%
+{chapter}{1}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\makeatletter
+\renewcommand\section{\@startsection%
+{section}{2}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\setlength{\parskip}{1em}
+\renewcommand*\contentsname{Table of contents}
+
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or January
+  \or February
+  \or March
+  \or April
+  \or May
+  \or June
+  \or July
+  \or August
+  \or September
+  \or October
+  \or November
+  \or December
+  \fi}
+
+\renewcommand{\dateseparator}{}
+
+\definecolor{green}{rgb}{0,0.8,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{gray}{THE NATURE CONSERVANCY INDONESIA FISHERIES CONSERVATION PROGRAM \\ AR\_ASSESSMENTGUIDE\_{\today}}}
+\rfoot{\thepage}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+% use "echo=False" to remove R code from the output
+
+
+\newgeometry{left=1cm,top=1cm,right=1cm,bottom=1cm}
+\input{/root/R-project/IFishAssessmentGuide/Texs/coverpage.tex}
+\restoregeometry
+
+\input{/root/R-project/IFishAssessmentGuide/Texs/innercoverpage.tex}
+\clearpage
+
+\tableofcontents
+
+\clearpage
+\newpage
+
+\large
+
+\chapter{Introduction}
+\input{/root/R-project/IFishAssessmentGuide/Texs/1_introduction.tex}
+
+\clearpage
+\newpage
+
+\chapter{Estimating Values of Key Life History Parameters}
+\input{/root/R-project/IFishAssessmentGuide/Texs/2_life_history_parameters.tex}
+
+\clearpage
+\newpage
+
+\chapter{A Simple Length-Based Assessment Tool}
+\input{/root/R-project/IFishAssessmentGuide/Texs/3_length_based.tex}
+
+\clearpage
+\newpage
+\setlength{\tabcolsep}{5pt}
+\captionsetup{width=1\textwidth, justification=centering}
+\setlength{\LTpost}{0pt}
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Sat Jan 21 12:25:23 2017
+{\small
+\begin{longtable}{ccccccccc}
+\caption{Ranking and Sample Sizes of 50 Most Abundant Species \\in Indonesian Deep Water Hook-And-Line Fisheries} \\ 
+  \hline
+Rank & ID\# & Species & Nsample & Lx-codrs & Lmax & Linf & Lopt & Lm50 \\ 
+  \hline
+1 & 7 & Pristipomoides multidens & 63893 & 90 & 100 & 90 & 71 & 53 \\ 
+  2 & 8 & Pristipomoides typus & 30362 & 662 & 85 & 77 & 60 & 45 \\ 
+  3 & 45 & Epinephelus areolatus & 25381 & 49 & 50 & 45 & 28 & 21 \\ 
+  4 & 9 & Pristipomoides filamentosus & 23752 & 86 & 90 & 81 & 64 & 48 \\ 
+  5 & 1 & Aphareus rutilans & 14082 & 112 & 125 & 113 & 88 & 66 \\ 
+  6 & 34 & Paracaesio kusakarii & 13597 & 80 & 85 & 77 & 60 & 45 \\ 
+  7 & 18 & Lutjanus malabaricus & 12746 & 90 & 100 & 90 & 71 & 53 \\ 
+  8 & 4 & Etelis sp. & 10727 & 120 & 130 & 117 & 92 & 69 \\ 
+  9 & 10 & Pristipomoides sieboldii & 10008 & 55 & 60 & 54 & 42 & 32 \\ 
+  10 & 23 & Pinjalo lewisi & 8916 & 61 & 55 & 50 & 39 & 29 \\ 
+  11 & 22 & Lutjanus erythropterus & 7724 & 69 & 70 & 63 & 49 & 37 \\ 
+  12 & 6 & Etelis coruscans & 7437 & 120 & 130 & 117 & 92 & 69 \\ 
+  13 & 20 & Lutjanus timorensis & 6440 & 60 & 60 & 54 & 42 & 32 \\ 
+  14 & 71 & Gymnocranius grandoculis & 5758 & 74 & 80 & 72 & 48 & 36 \\ 
+  15 & 27 & Lutjanus vitta & 5134 & 43 & 45 & 41 & 32 & 24 \\ 
+  16 & 70 & Wattsia mossambica & 4345 & 59 & 60 & 54 & 36 & 27 \\ 
+  17 & 35 & Paracaesio stonei & 4086 & 67 & 70 & 63 & 49 & 37 \\ 
+  18 & 19 & Lutjanus sebae & 3549 & 96 & 100 & 90 & 71 & 53 \\ 
+  19 & 5 & Etelis radiosus & 2274 & 103 & 105 & 95 & 74 & 56 \\ 
+  20 & 43 & Epinephelus morrhua & 2049 & 71 & 75 & 68 & 41 & 31 \\ 
+  21 & 32 & Paracaesio gonzalesi & 1903 & 51 & 55 & 50 & 39 & 29 \\ 
+  22 & 39 & Cephalopholis sonnerati & 1861 & 52 & 55 & 50 & 30 & 23 \\ 
+  23 & 51 & Epinephelus chlorostigma & 1842 & 63 & 75 & 68 & 41 & 31 \\ 
+  24 & 2 & Aprion virescens & 1782 & 107 & 110 & 99 & 78 & 58 \\ 
+  25 & 88 & Glaucosoma buergeri & 1579 & 67 & 70 & 63 & 42 & 32 \\ 
+  26 & 84 & Seriola rivoliana & 1456 & 120 & 135 & 122 & 81 & 61 \\ 
+  27 & 16 & Lutjanus argentimaculatus & 1436 & 95 & 100 & 90 & 71 & 53 \\ 
+  28 & 85 & Erythrocles schlegelii & 1394 & 90 & 90 & 81 & 54 & 41 \\ 
+  29 & 68 & Lethrinus amboinensis & 1175 & 56 & 60 & 54 & 36 & 27 \\ 
+  30 & 33 & Paracaesio xanthura & 1099 & 49 & 50 & 45 & 35 & 27 \\ 
+  31 & 17 & Lutjanus bohar & 1099 & 88 & 90 & 81 & 64 & 48 \\ 
+  32 & 67 & Lethrinus olivaceus & 1059 & 97 & 100 & 90 & 60 & 45 \\ 
+  33 & 21 & Lutjanus gibbus & 954 & 48 & 50 & 45 & 35 & 27 \\ 
+  34 & 90 & Diagramma pictum & 900 & 81 & 85 & 77 & 51 & 38 \\ 
+  35 & 76 & Carangoides chrysophrys & 822 & 80 & 80 & 72 & 48 & 36 \\ 
+  36 & 80 & Caranx sexfasciatus & 808 & 82 & 85 & 77 & 51 & 38 \\ 
+  37 & 65 & Lethrinus lentjan & 793 & 50 & 55 & 50 & 33 & 25 \\ 
+  38 & 58 & Epinephelus amblycephalus & 787 & 78 & 80 & 72 & 44 & 33 \\ 
+  39 & 72 & Gymnocranius griseus & 783 & 44 & 45 & 41 & 27 & 20 \\ 
+  40 & 31 & Symphorus nematophorus & 775 & 97 & 100 & 90 & 71 & 53 \\ 
+  41 & 30 & Lipocheilus carnolabrum & 764 & 73 & 75 & 68 & 53 & 40 \\ 
+  42 & 91 & Cookeolus japonicus & 744 & 62 & 65 & 59 & 39 & 29 \\ 
+  43 & 87 & Dentex carpenteri & 717 & 42 & 45 & 41 & 27 & 20 \\ 
+  44 & 86 & Argyrops spinifer & 709 & 50 & 55 & 50 & 33 & 25 \\ 
+  45 & 53 & Epinephelus heniochus & 623 & 56 & 60 & 54 & 33 & 25 \\ 
+  46 & 82 & Elagatis bipinnulata & 597 & 104 & 110 & 99 & 66 & 50 \\ 
+  47 & 77 & Carangoides gymnostethus & 533 & 84 & 90 & 81 & 54 & 41 \\ 
+  48 & 14 & Pristipomoides flavipinnis & 515 & 54 & 60 & 54 & 42 & 32 \\ 
+  49 & 61 & Plectropomus leopardus & 506 & 72 & 80 & 72 & 44 & 33 \\ 
+  50 & 81 & Caranx tille & 502 & 88 & 90 & 81 & 54 & 41 \\ 
+   \hline
+\hline
+\end{longtable}
+}
+ 
+\noindent{\small{\textbf{Nsample} is total sample including SWMS and CODRS data (mostly CODRS).
+\textbf{Lx-codrs} = Largest specimen with verifiable ID and size from CODRS photo.
+\textbf{Lmax} = maximum attainable total length at Indonesian lattitudes.
+\textbf{Linf} = 0.9 * Lmax (with 10\% dispersion around mean size in cohort).
+\textbf{Lm50} = Size at 50\% maturity.
+\textbf{Lm50} = 0.59 * Linf for deep water lutjanidae (Newman et al., 2016).
+\textbf{Lm50} = 0.46 * Linf for deep water Epinephelidae (Newman et al., 2016).
+\textbf{Lm50} = 0.5 * Linf for Other Species (pooled literature).
+\textbf{Lopt} = 1.33 * Lmat for range of demersals (Cope and Punt, 2009). All sizes in Total Length.}}
+\clearpage
+\newpage
+
+\clearpage
+\newpage
+
+\chapter{Plotting Results From Length-Based Assessments}
+\input{/root/R-project/IFishAssessmentGuide/Texs/4_plotting_results.tex}
+
+\clearpage
+\newpage
+
+\chapter{Evaluating Results From Length-Based Assessments}
+\input{/root/R-project/IFishAssessmentGuide/Texs/5_evaluating_results.tex}
+
+\clearpage
+\newpage
+
+\chapter{Management Considerations}
+\input{/root/R-project/IFishAssessmentGuide/Texs/6_management_considerations.tex}
+
+\clearpage
+\newpage
+
+\chapter{References}
+\input{/root/R-project/IFishAssessmentGuide/Texs/7_references.tex}
+
+\clearpage
+\newpage
+
+\chapter{Catch Length Frequencies and Life History Parameter Values}
+\input{/root/R-project/IFishAssessmentGuide/Texs/8_lfd.tex}
+
+\clearpage
+\newpage
+
+\setlength{\tabcolsep}{5pt}
+\captionsetup{width=1\textwidth, justification=centering}
+\setlength{\LTpost}{0pt}
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Sat Jan 21 12:25:24 2017
+{\small
+\begin{longtable}{ccccccccc}
+\caption{Life History Parameters 100 Most Abundant Species Indonesian Deep Water Hook-And-Line Fisheries} \\ 
+  \hline
+ID\# & Species & Family & Nsample & Lx-codrs & Lmax & Linf & Lopt & Lm50 \\ 
+  \hline
+1 & Aphareus rutilans & Lutjanidae & 14082 & 112 & 125 & 113 & 88 & 66 \\ 
+  2 & Aprion virescens & Lutjanidae & 1782 & 107 & 110 & 99 & 78 & 58 \\ 
+  3 & Etelis carbunculus & Lutjanidae & 273 & 54 & 60 & 54 & 42 & 32 \\ 
+  4 & Etelis sp. & Lutjanidae & 10727 & 120 & 130 & 117 & 92 & 69 \\ 
+  5 & Etelis radiosus & Lutjanidae & 2274 & 103 & 105 & 95 & 74 & 56 \\ 
+  6 & Etelis coruscans & Lutjanidae & 7437 & 120 & 130 & 117 & 92 & 69 \\ 
+  7 & Pristipomoides multidens & Lutjanidae & 63893 & 90 & 100 & 90 & 71 & 53 \\ 
+  8 & Pristipomoides typus & Lutjanidae & 30362 & 662 & 85 & 77 & 60 & 45 \\ 
+  9 & Pristipomoides filamentosus & Lutjanidae & 23752 & 86 & 90 & 81 & 64 & 48 \\ 
+  10 & Pristipomoides sieboldii & Lutjanidae & 10008 & 55 & 60 & 54 & 42 & 32 \\ 
+  11 & Pristipomoides argyrogrammicus & Lutjanidae & 67 & 38 & 40 & 36 & 28 & 21 \\ 
+  12 & Pristipomoides zonatus & Lutjanidae & 47 & 49 & 50 & 45 & 35 & 27 \\ 
+  13 & Pristipomoides auricilla & Lutjanidae & 36 & 79 & 45 & 41 & 32 & 24 \\ 
+  14 & Pristipomoides flavipinnis & Lutjanidae & 515 & 54 & 60 & 54 & 42 & 32 \\ 
+  15 & Lutjanus bitaeniatus & Lutjanidae & 379 & 41 & 45 & 41 & 32 & 24 \\ 
+  16 & Lutjanus argentimaculatus & Lutjanidae & 1436 & 95 & 100 & 90 & 71 & 53 \\ 
+  17 & Lutjanus bohar & Lutjanidae & 1099 & 88 & 90 & 81 & 64 & 48 \\ 
+  18 & Lutjanus malabaricus & Lutjanidae & 12746 & 90 & 100 & 90 & 71 & 53 \\ 
+  19 & Lutjanus sebae & Lutjanidae & 3549 & 96 & 100 & 90 & 71 & 53 \\ 
+  20 & Lutjanus timorensis & Lutjanidae & 6440 & 60 & 60 & 54 & 42 & 32 \\ 
+  21 & Lutjanus gibbus & Lutjanidae & 954 & 48 & 50 & 45 & 35 & 27 \\ 
+  22 & Lutjanus erythropterus & Lutjanidae & 7724 & 69 & 70 & 63 & 49 & 37 \\ 
+  23 & Pinjalo lewisi & Lutjanidae & 8916 & 61 & 55 & 50 & 39 & 29 \\ 
+  24 & Pinjalo pinjalo & Lutjanidae & 125 & 76 & 80 & 72 & 56 & 42 \\ 
+  25 & Lutjanus russelli & Lutjanidae & 229 & 50 & 50 & 45 & 35 & 27 \\ 
+  26 & Lutjanus lemniscatus & Lutjanidae & 329 & 59 & 65 & 59 & 46 & 35 \\ 
+  27 & Lutjanus vitta & Lutjanidae & 5134 & 43 & 45 & 41 & 32 & 24 \\ 
+  28 & Lutjanus boutton & Lutjanidae & 302 & 33 & 35 & 32 & 25 & 19 \\ 
+  29 & Lutjanus rivulatus & Lutjanidae & 61 & 80 & 85 & 77 & 60 & 45 \\ 
+  30 & Lipocheilus carnolabrum & Lutjanidae & 764 & 73 & 75 & 68 & 53 & 40 \\ 
+  31 & Symphorus nematophorus & Lutjanidae & 775 & 97 & 100 & 90 & 71 & 53 \\ 
+  32 & Paracaesio gonzalesi & Lutjanidae & 1903 & 51 & 55 & 50 & 39 & 29 \\ 
+  33 & Paracaesio xanthura & Lutjanidae & 1099 & 49 & 50 & 45 & 35 & 27 \\ 
+  34 & Paracaesio kusakarii & Lutjanidae & 13597 & 80 & 85 & 77 & 60 & 45 \\ 
+  35 & Paracaesio stonei & Lutjanidae & 4086 & 67 & 70 & 63 & 49 & 37 \\ 
+  36 & Saloptia powelli & Epinephelidae & 90 & 52 & 55 & 50 & 30 & 23 \\ 
+  37 & Cephalopholis miniata & Epinephelidae & 96 & 40 & 45 & 41 & 25 & 19 \\ 
+  38 & Cephalopholis sexmaculata & Epinephelidae & 178 & 44 & 50 & 45 & 28 & 21 \\ 
+  39 & Cephalopholis sonnerati & Epinephelidae & 1861 & 52 & 55 & 50 & 30 & 23 \\ 
+  40 & Cephalopholis igarashiensis & Epinephelidae & 130 & 37 & 40 & 36 & 22 & 17 \\ 
+  41 & Epinephelus latifasciatus & Epinephelidae & 453 & 98 & 110 & 99 & 61 & 46 \\ 
+  42 & Epinephelus radiatus & Epinephelidae & 478 & 68 & 70 & 63 & 39 & 29 \\ 
+  43 & Epinephelus morrhua & Epinephelidae & 2049 & 71 & 75 & 68 & 41 & 31 \\ 
+  44 & Epinephelus poecilonotus & Epinephelidae & 275 & 80 & 80 & 72 & 44 & 33 \\ 
+  45 & Epinephelus areolatus & Epinephelidae & 25381 & 49 & 50 & 45 & 28 & 21 \\ 
+  46 & Epinephelus bleekeri & Epinephelidae & 409 & 79 & 80 & 72 & 44 & 33 \\ 
+  47 & Epinephelus miliaris & Epinephelidae & 107 & 53 & 55 & 50 & 30 & 23 \\ 
+  48 & Epinephelus bilobatus & Epinephelidae & 260 & 54 & 55 & 50 & 30 & 23 \\ 
+  49 & Epinephelus malabaricus & Epinephelidae & 121 & 138 & 140 & 126 & 77 & 58 \\ 
+  50 & Epinephelus coioides & Epinephelidae & 375 & 119 & 120 & 108 & 66 & 50 \\ 
+   \hline
+\hline
+\end{longtable}
+}
+ 
+\noindent{\small{\textbf{Nsample} is total sample including SWMS and CODRS data (mostly CODRS).
+\textbf{Lx-codrs} = Largest specimen with verifiable ID and size from CODRS photo.
+\textbf{Lmax} = maximum attainable total length at Indonesian lattitudes.
+\textbf{Linf} = 0.9 * Lmax (with 10\% dispersion around mean size in cohort).
+\textbf{Lm50} = Size at 50\% maturity.
+\textbf{Lm50} = 0.59 * Linf for deep water lutjanidae (Newman et al., 2016).
+\textbf{Lm50} = 0.46 * Linf for deep water Epinephelidae (Newman et al., 2016).
+\textbf{Lm50} = 0.5 * Linf for Other Species (pooled literature).
+\textbf{Lopt} = 1.33 * Lmat for range of demersals (Cope and Punt, 2009). All sizes in Total Length.}}
+\clearpage
+\newpage% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Sat Jan 21 12:25:24 2017
+{\small
+\begin{longtable}{ccccccccc}
+\caption{(Continued from 8.1)\\Life History Parameters 100 Most Abundant Species Indonesian Deep Water Hook-And-Line Fisheries} \\ 
+  \hline
+ID\# & Species & Family & Nsample & Lx-codrs & Lmax & Linf & Lopt & Lm50 \\ 
+  \hline
+51 & Epinephelus chlorostigma & Epinephelidae & 1842 & 63 & 75 & 68 & 41 & 31 \\ 
+  52 & Epinephelus retouti & Epinephelidae & 69 & 49 & 50 & 45 & 28 & 21 \\ 
+  53 & Epinephelus heniochus & Epinephelidae & 623 & 56 & 60 & 54 & 33 & 25 \\ 
+  54 & Epinephelus stictus & Epinephelidae & 395 & 47 & 50 & 45 & 28 & 21 \\ 
+  55 & Epinephelus epistictus & Epinephelidae & 120 & 81 & 85 & 77 & 47 & 35 \\ 
+  56 & Epinephelus multinotatus & Epinephelidae & 232 & 87 & 100 & 90 & 55 & 41 \\ 
+  57 & Epinephelus undulosus & Epinephelidae & 255 & 75 & 80 & 72 & 44 & 33 \\ 
+  58 & Epinephelus amblycephalus & Epinephelidae & 787 & 78 & 80 & 72 & 44 & 33 \\ 
+  59 & Hyporthodus octofasciatus & Epinephelidae & 190 & 155 & 155 & 140 & 85 & 64 \\ 
+  60 & Plectropomus maculatus & Epinephelidae & 89 & 73 & 80 & 72 & 44 & 33 \\ 
+  61 & Plectropomus leopardus & Epinephelidae & 506 & 72 & 80 & 72 & 44 & 33 \\ 
+  62 & Variola albimarginata & Epinephelidae & 423 & 48 & 60 & 54 & 33 & 25 \\ 
+  63 & Lethrinus erythracanthus & Lethrinidae & 53 & 65 & 70 & 63 & 42 & 32 \\ 
+  64 & Lethrinus atkinsoni & Lethrinidae & 59 & 43 & 50 & 45 & 30 & 23 \\ 
+  65 & Lethrinus lentjan & Lethrinidae & 793 & 50 & 55 & 50 & 33 & 25 \\ 
+  66 & Lethrinus nebulosus & Lethrinidae & 121 & 73 & 75 & 68 & 45 & 34 \\ 
+  67 & Lethrinus olivaceus & Lethrinidae & 1059 & 97 & 100 & 90 & 60 & 45 \\ 
+  68 & Lethrinus amboinensis & Lethrinidae & 1175 & 56 & 60 & 54 & 36 & 27 \\ 
+  69 & Lethrinus rubrioperculatus & Lethrinidae & 108 & 44 & 50 & 45 & 30 & 23 \\ 
+  70 & Wattsia mossambica & Lethrinidae & 4345 & 59 & 60 & 54 & 36 & 27 \\ 
+  71 & Gymnocranius grandoculis & Lethrinidae & 5758 & 74 & 80 & 72 & 48 & 36 \\ 
+  72 & Gymnocranius griseus & Lethrinidae & 783 & 44 & 45 & 41 & 27 & 20 \\ 
+  73 & Carangoides coeruleopinnatus & Carangidae & 195 & 69 & 70 & 63 & 42 & 32 \\ 
+  74 & Carangoides fulvoguttatus & Carangidae & 148 & 94 & 110 & 99 & 66 & 50 \\ 
+  75 & Carangoides malabaricus & Carangidae & 129 & 63 & 70 & 63 & 42 & 32 \\ 
+  76 & Carangoides chrysophrys & Carangidae & 822 & 80 & 80 & 72 & 48 & 36 \\ 
+  77 & Carangoides gymnostethus & Carangidae & 533 & 84 & 90 & 81 & 54 & 41 \\ 
+  78 & Caranx ignobilis & Carangidae & 355 & 130 & 140 & 126 & 84 & 63 \\ 
+  79 & Caranx lugubris & Carangidae & 76 & 80 & 85 & 77 & 51 & 38 \\ 
+  80 & Caranx sexfasciatus & Carangidae & 808 & 82 & 85 & 77 & 51 & 38 \\ 
+  81 & Caranx tille & Carangidae & 502 & 88 & 90 & 81 & 54 & 41 \\ 
+  82 & Elagatis bipinnulata & Carangidae & 597 & 104 & 110 & 99 & 66 & 50 \\ 
+  83 & Seriola dumerili & Carangidae & 212 & 150 & 175 & 158 & 105 & 79 \\ 
+  84 & Seriola rivoliana & Carangidae & 1456 & 120 & 135 & 122 & 81 & 61 \\ 
+  85 & Erythrocles schlegelii & Emmelichthydae & 1394 & 90 & 90 & 81 & 54 & 41 \\ 
+  86 & Argyrops spinifer & Sparidae & 709 & 50 & 55 & 50 & 33 & 25 \\ 
+  87 & Dentex carpenteri & Sparidae & 717 & 42 & 45 & 41 & 27 & 20 \\ 
+  88 & Glaucosoma buergeri & Glaucosomatidae & 1579 & 67 & 70 & 63 & 42 & 32 \\ 
+  89 & Diagramma labiosum & Haemulidae & 359 & 72 & 85 & 77 & 51 & 38 \\ 
+  90 & Diagramma pictum & Haemulidae & 900 & 81 & 85 & 77 & 51 & 38 \\ 
+  91 & Cookeolus japonicus & Priacanthidae & 744 & 62 & 65 & 59 & 39 & 29 \\ 
+  92 & Sphyraena barracuda & Sphyraenidae & 193 & 140 & 160 & 144 & 96 & 72 \\ 
+  93 & Sphyraena forsteri & Sphyraenidae & 134 & 60 & 65 & 59 & 39 & 29 \\ 
+  94 & Sphyraena putnamae & Sphyraenidae & 271 & 130 & 135 & 122 & 81 & 61 \\ 
+  95 & Parascolopsis eriomma & Nemipteridae & 313 & 32 & 35 & 32 & 21 & 16 \\ 
+  96 & Ostichthys japonicus & Holocentridae & 185 & 46 & 50 & 45 & 30 & 23 \\ 
+  97 & Rachycentron canadum & Rachycentridae & 181 & 133 & 175 & 158 & 105 & 79 \\ 
+  98 & Giganthias serratospinosus & Serranidae & 47 & 39 & 45 & 41 & 27 & 20 \\ 
+  99 & Protonibea diacanthus & Sciaenidae & 72 & 113 & 150 & 135 & 90 & 68 \\ 
+  100 & Branchiostegus australiensis & Malacanthidae & 38 & 59 & 60 & 54 & 36 & 27 \\ 
+   \hline
+\hline
+\end{longtable}
+}
+ 
+\noindent{\small{\textbf{Nsample} is total sample including SWMS and CODRS data (mostly CODRS).
+\textbf{Lx-codrs} = Largest specimen with verifiable ID and size from CODRS photo.
+\textbf{Lmax} = maximum attainable total length at Indonesian lattitudes.
+\textbf{Linf} = 0.9 * Lmax (with 10\% dispersion around mean size in cohort).
+\textbf{Lm50} = Size at 50\% maturity.
+\textbf{Lm50} = 0.59 * Linf for deep water lutjanidae (Newman et al., 2016).
+\textbf{Lm50} = 0.46 * Linf for deep water Epinephelidae (Newman et al., 2016).
+\textbf{Lm50} = 0.5 * Linf for Other Species (pooled literature).
+\textbf{Lopt} = 1.33 * Lmat for range of demersals (Cope and Punt, 2009). All sizes in Total Length.}}
+\clearpage
+\newpage
+
+\clearpage
+\verbatimfont{\normalfont\rmfamily}
+\definecolor{fgcolor}{rgb}{0,0,0}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-1} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Aphareus-rutilans.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-2} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Aprion-virescens.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-3} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Etelis-carbunculus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-4} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Etelis-sp.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-5} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Etelis-radiosus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-6} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Etelis-coruscans.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-7} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pristipomoides-multidens.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-8} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pristipomoides-typus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-9} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pristipomoides-filamentosus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-10} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pristipomoides-sieboldii.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-11} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pristipomoides-argyrogrammicus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-12} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pristipomoides-zonatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-13} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pristipomoides-auricilla.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-14} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pristipomoides-flavipinnis.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-15} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-bitaeniatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-16} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-argentimaculatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-17} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-bohar.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-18} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-malabaricus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-19} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-sebae.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-20} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-timorensis.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-21} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-gibbus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-22} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-erythropterus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-23} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pinjalo-lewisi.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-24} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Pinjalo-pinjalo.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-25} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-russelli.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-26} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-lemniscatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-27} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-vitta.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-28} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-boutton.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-29} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lutjanus-rivulatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-30} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lipocheilus-carnolabrum.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-31} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Symphorus-nematophorus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-32} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Paracaesio-gonzalesi.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-33} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Paracaesio-xanthura.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-34} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Paracaesio-kusakarii.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-35} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Paracaesio-stonei.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-36} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Saloptia-powelli.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-37} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Cephalopholis-miniata.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-38} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Cephalopholis-sexmaculata.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-39} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Cephalopholis-sonnerati.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-40} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Cephalopholis-igarashiensis.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-41} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-latifasciatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-42} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-radiatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-43} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-morrhua.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-44} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-poecilonotus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-45} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-areolatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-46} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-bleekeri.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-47} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-miliaris.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-48} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-bilobatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-49} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-malabaricus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-50} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-coioides.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-51} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-chlorostigma.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-52} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-retouti.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-53} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-heniochus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-54} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-stictus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-55} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-epistictus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-56} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-multinotatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-57} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-undulosus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-58} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Epinephelus-amblycephalus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-59} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Hyporthodus-octofasciatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-60} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Plectropomus-maculatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-61} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Plectropomus-leopardus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-62} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Variola-albimarginata.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-63} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lethrinus-erythracanthus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-64} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lethrinus-atkinsoni.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-65} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lethrinus-lentjan.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-66} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lethrinus-nebulosus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-67} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lethrinus-olivaceus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-68} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lethrinus-amboinensis.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-69} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Lethrinus-rubrioperculatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-70} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Wattsia-mossambica.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-71} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Gymnocranius-grandoculis.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-72} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Gymnocranius-griseus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-73} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Carangoides-coeruleopinnatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-74} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Carangoides-fulvoguttatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-75} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Carangoides-malabaricus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-76} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Carangoides-chrysophrys.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-77} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Carangoides-gymnostethus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-78} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Caranx-ignobilis.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-79} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Caranx-lugubris.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-80} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Caranx-sexfasciatus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-81} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Caranx-tille.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-82} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Elagatis-bipinnulata.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-83} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Seriola-dumerili.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-84} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Seriola-rivoliana.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-85} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Erythrocles-schlegelii.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-86} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Argyrops-spinifer.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-87} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Dentex-carpenteri.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-88} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Glaucosoma-buergeri.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-89} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Diagramma-labiosum.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-90} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Diagramma-pictum.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-91} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Cookeolus-japonicus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-92} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Sphyraena-barracuda.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-93} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Sphyraena-forsteri.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-94} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Sphyraena-putnamae.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-95} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Parascolopsis-eriomma.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-96} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Ostichthys-japonicus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-97} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Rachycentron-canadum.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-98} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Giganthias-serratospinosus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-99} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Protonibea-diacanthus.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishAssessmentGuide/Plots/plot-LFD-100} 
+\begin{kframe}\begin{verbatim}
+ 
+\end{verbatim}
+\end{kframe}
+\includegraphics[scale=0.4]{/root/R-project/IFishAssessmentGuide/Images/Species/Branchiostegus-australiensis.png}
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\end{document}

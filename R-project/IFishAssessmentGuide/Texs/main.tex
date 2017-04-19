@@ -1,0 +1,86 @@
+\documentclass{report}
+\usepackage{geometry}
+\geometry{a4paper,textwidth=15.92cm,textheight=24.62cm}
+\usepackage{verbatim}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+%\usepackage[nodayofweek]{datetime}
+\usepackage[ddmmyy]{datetime}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\makeatletter
+\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
+\makeatother
+
+% following to define a new section style that takes less space
+\makeatletter % make "at" ("@") letter, important for the code that follows
+\renewcommand\chapter{\@startsection%
+{chapter}{1}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\makeatletter
+\renewcommand\section{\@startsection%
+{section}{2}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\setlength{\parskip}{1em}
+\renewcommand*\contentsname{Table of contents}
+
+\begin{document}
+\large
+
+\chapter{INTRODUCTION}
+\input{./1_introduction.tex}
+
+\clearpage
+\newpage
+
+\chapter{ESTIMATING VALUES OF KEY LIFE HISTORY PARAMETERS}
+\input{./2_life_history_parameters.tex}
+
+\clearpage
+\newpage
+
+\chapter{VERIFICATION OF LIFE HISTORY PARAMETER VALUES}
+\input{./3_verification_parameter.tex}
+
+\clearpage
+\newpage
+
+\chapter{A SIMPLE LENGTH-BASED ASSESSMENT TOOL}
+\input{./4_length_based.tex}
+
+\clearpage
+\newpage
+
+\chapter{EVALUATING RESULTS FROM LENGTH-BASED ASSESSMENTS}
+\input{./5_evaluating_results.tex}
+
+\clearpage
+\newpage
+
+\chapter{MANAGEMENT CONSIDERATIONS}
+\input{./6_management_considerations.tex}
+
+\clearpage
+\newpage
+
+\chapter{REFERENCES}
+\input{./7_references.tex}
+
+\clearpage
+\newpage
+
+\chapter{Catch length frequencies and life history parameter values}
+\input{./8_lfd.tex}
+
+\end{document}
