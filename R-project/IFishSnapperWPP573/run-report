@@ -1,0 +1,41 @@
+#!/bin/bash
+# File: run-report
+# Purpose: Bash shell script for generating reports in I-Fish
+# Date first version: December 27, 2013
+# Requires: Installation of Latex and R with supporting packages (e.g. knitr in R)
+
+
+### Prepare a variable for storing part of the filename
+now=$(date +"%Y_%m_%d")
+
+### Directory where the reports are
+current=$"/root/R-project/IFishSnapperWPP573/Reports/Current/"
+
+### Directory with the archived reports
+archive=$"/root/R-project/IFishSnapperWPP573/Reports/Archive/"
+
+### Directory with the R scripts
+working=$"/root/R-project/IFishSnapperWPP573/Scripts/"
+
+### Move current pdf reports to archive, adding dates to the filename
+cd $current
+for file in *.[Pp][Dd][Ff]; do
+    mv "$file" "$archive""$now"-"$file"
+done
+
+### Remove any old latex files
+cd $working
+rm *.tex *.toc *.aux *.log
+
+### Run R script
+"$working"data.r
+
+### Run pdflatex a couple of times (to get references etc right)
+pdflatex -output-directory=/root/R-project/IFishSnapperWPP573/Reports/Current/  "$working"IFishSnapperWPP573.tex  
+
+### Copy .pdf file to website
+rm -f /root/app/ifish/pub/IFishSnapperWPP573.pdf
+rm -f /root/app/ifish/pub/IFishSnapperWPP573-print.pdf
+cp /root/R-project/IFishSnapperWPP573/Reports/Current/IFishSnapperWPP573.pdf /root/app/ifish/pub/IFishSnapperWPP573-print.pdf
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -sOutputFile=/root/app/ifish/pub/IFishSnapperWPP573.pdf /root/app/ifish/pub/IFishSnapperWPP573-print.pdf
+echo "done!"
