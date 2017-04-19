@@ -1,0 +1,18 @@
+#!/bin/bash
+# File: run-report
+# Purpose: Bash shell script for generating spreadsheet reports using R
+# Date first version: Feb 20, 2017
+# Author: Gede Wawan (gede.wawan@gmail.com)
+# Requires: Installation of Latex and R with supporting packages (e.g. WriteXLS in R)
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+export DISPLAY=:0.0
+
+### Prepare a variable for storing part of the filename
+now=$(date +"%Y_%m_%d")
+
+### Run R script
+/root/R-project/IFishEstimatedParameters/Scripts/data.r
+
+echo "done!"
+
+

@@ -1,0 +1,27 @@
+Loading required package: methods
+Loading required package: DBI
+Loading required package: lattice
+Loading required package: MASS
+
+Attaching package: ‘memisc’
+
+The following objects are masked from ‘package:stats’:
+
+    contr.sum, contr.treatment, contrasts
+
+The following objects are masked from ‘package:base’:
+
+    as.array, trimws
+
+Loading required package: Matrix
+Loading required package: boot
+
+Attaching package: ‘boot’
+
+The following object is masked from ‘package:lattice’:
+
+    melanoma
+
+[1] FALSE
+[1] FALSE
+done!
