@@ -1,0 +1,3059 @@
+\documentclass{report}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{geometry}
+\geometry{a4paper,textwidth=15.92cm,textheight=24.62cm}
+\usepackage{verbatim}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+%\usepackage[nodayofweek]{datetime}
+\usepackage[ddmmyy]{datetime}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{fancyhdr}
+
+\makeatletter
+\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
+\makeatother
+
+% following to define a new section style that takes less space
+\makeatletter % make "at" ("@") letter, important for the code that follows
+\renewcommand\chapter{\@startsection%
+{chapter}{1}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\makeatletter
+\renewcommand\section{\@startsection%
+{section}{2}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
+\setlength{\tabcolsep}{3pt}
+\setlength{\parskip}{1em}
+\renewcommand*\contentsname{Table of contents}
+
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or January
+  \or February
+  \or March
+  \or April
+  \or May
+  \or June
+  \or July
+  \or August
+  \or September
+  \or October
+  \or November
+  \or December
+  \fi}
+
+\renewcommand{\dateseparator}{}
+
+%\definecolor{red}{rgb}{0.8,0,0}
+%\definecolor{yellow}{rgb}{0.8,0.8,0}
+\definecolor{green}{rgb}{0,0.8,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{gray}{THE NATURE CONSERVANCY INDONESIA FISHERIES CONSERVATION PROGRAM \\ AR\_714715\_{\today}}}
+\rfoot{\thepage}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+% use "echo=False" to remove R code from the output
+
+
+\newgeometry{left=1cm,top=1cm,right=1cm,bottom=1cm}
+\input{/root/R-project/IFishSnapperWPP714_715/Texs/coverpage.tex}
+\restoregeometry
+
+\input{/root/R-project/IFishSnapperWPP714_715/Texs/innercoverpage.tex}
+\clearpage
+
+\tableofcontents
+
+\vfill
+
+\large
+
+\chapter{Introduction}
+\input{/root/R-project/IFishSnapperWPP714_715/Texs/1_introduction.tex}
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Wed Apr 19 00:14:16 2017
+\begin{table}[ht]
+\centering
+\caption{Sample Sizes, Length-Weight Relationships \& Trading Limits Snapper Fisheries Indonesia} 
+{\small
+\begin{tabular}{ccccccccccc}
+  \hline
+  { } & { } & {Reported} & { } & { } & {Length} & {Converted} & {Plotted} & \multicolumn{3}{c}{Sample Sizes}\\
+      { } & { } & {Trade} & \multicolumn{2}{c}{ W = a L\textsuperscript{b}} & {Type} & {Trade} & {Trade} & \multicolumn{3}{c}{Assessment}\\
+      { } & { } & {Limit} & { } & { } & {for a \& b} & {Limit} & {Limit} & \multicolumn{3}{c}{WPP 714+715}\\
+      {\#ID} & {Species} & {Weight (g)} & {a} & {b} & {TL-FL-SL} & {L(cm)} & {TL(cm)} & {2015} & {2016} & {2017}\\ \hline
+1 & Aphareus rutilans & 1000 & 0.015 & 2.961 & FL & 42.20 & 49.61 & 0 & 10340 & 520 \\ 
+  2 & Aprion virescens & 1000 & 0.023 & 2.886 & FL & 40.49 & 45.90 & 0 & 1401 & 20 \\ 
+  4 & Etelis sp. & 500 & 0.022 & 2.950 & FL & 30.16 & 32.84 & 0 & 5433 & 231 \\ 
+  5 & Etelis radiosus & 1000 & 0.056 & 2.689 & FL & 38.05 & 43.15 & 0 & 1982 & 65 \\ 
+  6 & Etelis coruscans & 500 & 0.041 & 2.758 & FL & 30.28 & 37.85 & 0 & 3150 & 179 \\ 
+  7 & Pristipomoides multidens & 500 & 0.020 & 2.944 & FL & 31.18 & 34.92 & 0 & 5688 & 2378 \\ 
+  8 & Pristipomoides typus & 500 & 0.014 & 2.916 & TL & 36.16 & 36.16 & 0 & 1234 & 318 \\ 
+  9 & Pristipomoides filamentosus & 500 & 0.038 & 2.796 & FL & 29.70 & 33.27 & 0 & 11690 & 195 \\ 
+  10 & Pristipomoides sieboldii & 300 & 0.022 & 2.942 & FL & 25.52 & 29.21 & 0 & 996 & 37 \\ 
+  15 & Lutjanus argentimaculatus & 500 & 0.034 & 2.792 & FL & 31.22 & 31.78 & 0 & 973 & 223 \\ 
+  16 & Lutjanus bohar & 500 & 0.016 & 3.059 & FL & 29.70 & 31.31 & 0 & 529 & 21 \\ 
+  17 & Lutjanus malabaricus & 500 & 0.009 & 3.137 & FL & 33.11 & 33.11 & 0 & 615 & 6950 \\ 
+  18 & Lutjanus sebae & 500 & 0.009 & 3.208 & FL & 29.97 & 31.26 & 0 & 426 & 358 \\ 
+  19 & Lutjanus timorensis & 500 & 0.009 & 3.137 & FL & 33.11 & 33.34 & 0 & 3389 & 387 \\ 
+  20 & Lutjanus gibbus & 500 & 0.015 & 3.091 & FL & 28.87 & 31.09 & 0 & 788 & 2 \\ 
+  21 & Lutjanus erythropterus & 500 & 0.024 & 2.870 & FL & 31.79 & 31.79 & 0 & 4350 & 1386 \\ 
+  22 & Pinjalo lewisi & 300 & 0.014 & 2.970 & FL & 28.42 & 29.64 & 0 & 2281 & 354 \\ 
+  27 & Lutjanus vitta & 300 & 0.017 & 2.978 & FL & 26.72 & 27.64 & 0 & 227 & 0 \\ 
+  31 & Symphorus nematophorus & 1000 & 0.015 & 3.046 & FL & 38.63 & 40.18 & 0 & 316 & 46 \\ 
+  32 & Paracaesio gonzalesi & 300 & 0.020 & 3.050 & FL & 23.24 & 24.96 & 0 & 878 & 12 \\ 
+  33 & Paracaesio xanthura & 300 & 0.023 & 3.000 & SL & 23.64 & 27.39 & 0 & 379 & 54 \\ 
+  34 & Paracaesio kusakarii & 500 & 0.011 & 3.135 & FL & 30.96 & 34.80 & 0 & 4298 & 281 \\ 
+  35 & Paracaesio stonei & 500 & 0.024 & 2.960 & FL & 28.78 & 32.35 & 0 & 1665 & 131 \\ 
+  39 & Cephalopholis sonnerati & 300 & 0.015 & 3.058 & TL & 25.78 & 25.78 & 0 & 635 & 16 \\ 
+  42 & Epinephelus radiatus & 300 & 0.061 & 2.624 & FL & 25.59 & 25.59 & 0 & 211 & 8 \\ 
+  43 & Epinephelus morrhua & 300 & 0.061 & 2.624 & FL & 25.59 & 25.59 & 0 & 724 & 45 \\ 
+  45 & Epinephelus areolatus & 300 & 0.011 & 3.048 & FL & 28.18 & 28.77 & 0 & 1438 & 44 \\ 
+  48 & Epinephelus bilobatus & 300 & 0.014 & 2.990 & TL & 27.82 & 27.82 & 0 & 214 & 2 \\ 
+  50 & Epinephelus coioides & 1500 & 0.011 & 3.084 & TL & 46.94 & 46.94 & 0 & 258 & 118 \\ 
+  51 & Epinephelus chlorostigma & 500 & 0.015 & 2.940 & FL & 34.62 & 34.62 & 0 & 412 & 50 \\ 
+  54 & Epinephelus stictus & 300 & 0.027 & 3.000 & SL & 22.37 & 28.24 & 0 & 373 & 3 \\ 
+  57 & Epinephelus undulosus & 1500 & 0.015 & 2.940 & FL & 50.31 & 50.31 & 0 & 243 & 2 \\ 
+  58 & Epinephelus amblycephalus & 1500 & 0.012 & 3.057 & TL & 45.99 & 45.99 & 0 & 449 & 42 \\ 
+  62 & Variola albimarginata & 300 & 0.012 & 3.079 & FL & 26.68 & 30.44 & 0 & 270 & 9 \\ 
+  67 & Lethrinus olivaceus & 300 & 0.029 & 2.851 & FL & 25.49 & 27.50 & 0 & 789 & 15 \\ 
+  68 & Lethrinus amboinensis & 300 & 0.029 & 2.851 & FL & 25.49 & 28.06 & 0 & 634 & 10 \\ 
+  70 & Wattsia mossambica & 500 & 0.040 & 2.824 & FL & 28.21 & 29.34 & 0 & 2504 & 48 \\ 
+  71 & Gymnocranius grandoculis & 500 & 0.032 & 2.885 & FL & 28.43 & 30.53 & 0 & 1665 & 131 \\ 
+  76 & Carangoides chrysophrys & 1000 & 0.027 & 2.902 & FL & 37.68 & 42.12 & 0 & 527 & 369 \\ 
+  77 & Carangoides gymnostethus & 1000 & 0.046 & 2.746 & FL & 37.88 & 41.55 & 0 & 263 & 6 \\ 
+  79 & Caranx ignobilis & 2000 & 0.027 & 2.913 & FL & 46.78 & 54.36 & 0 & 259 & 4 \\ 
+  81 & Caranx sexfasciatus & 2000 & 0.032 & 2.930 & FL & 43.43 & 49.51 & 0 & 619 & 97 \\ 
+  82 & Caranx tille & 2000 & 0.032 & 2.930 & FL & 43.43 & 49.51 & 0 & 402 & 79 \\ 
+  83 & Elagatis bipinnulata & 1000 & 0.013 & 2.920 & FL & 46.53 & 55.37 & 0 & 416 & 18 \\ 
+  85 & Seriola rivoliana & 2000 & 0.006 & 3.170 & FL & 54.23 & 60.03 & 0 & 995 & 91 \\ 
+  86 & Erythrocles schlegelii & 1500 & 0.011 & 3.040 & FL & 48.55 & 53.60 & 0 & 1157 & 101 \\ 
+  88 & Dentex carpenteri & 300 & 0.023 & 2.930 & FL & 25.42 & 27.66 & 0 & 521 & 30 \\ 
+  89 & Glaucosoma buergeri & 500 & 0.045 & 2.725 & TL & 30.40 & 30.40 & 0 & 496 & 67 \\ 
+  91 & Diagramma pictum & 500 & 0.014 & 2.988 & FL & 33.08 & 36.71 & 0 & 303 & 24 \\ 
+  93 & Cookeolus japonicus & 300 & 0.014 & 3.000 & TL & 27.58 & 27.58 & 0 & 262 & 7 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\clearpage
+\newpage
+
+\chapter{Materials and methods for data collection, analysis and reporting}
+\input{/root/R-project/IFishSnapperWPP714_715/Texs/2_materials_and_methods.tex}
+
+\newpage
+
+\chapter{Fishing grounds and traceability}
+\input{/root/R-project/IFishSnapperWPP714_715/Texs/3_fishing_grounds.tex}
+
+\newpage
+
+\chapter{Species-specific length-based assessments}
+\verbatimfont{\normalfont\rmfamily}
+\definecolor{fgcolor}{rgb}{0,0,0}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-1} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-2} 
+\begin{kframe}\begin{verbatim}
+The percentages of Aphareus rutilans (ID #1, Lutjanidae) in 2016, n = 10,340
+Immature (< 66cm): 33%
+Small mature (>= 66cm, < 88cm): 60%
+Large mature (>= 88cm): 7%
+Mega spawner (>= 96.8cm): 1% (subset of large mature fish)
+Spawning Potential Ratio: 3%
+ 
+Between 30% and 50% of the fish in the catch are immature and have not had a chance
+to reproduce before capture. The fishery is in immediate danger of overfishing
+through overharvesting of juveniles, if fishing pressure is high.  Catching small and
+immature fish needs to be actively avoided and a limit on overall fishing pressure is
+warranted. Risk level is high.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Aphareus rutilans (ID #1, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature no trend over recent years, situation stable. P: not available
+% Mega Spawner no trend over recent years, situation stable. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-3} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-4} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Aprion virescens (ID #2, Lutjanidae) in 2016, n = 1,401
+Immature (< 58cm): 8%
+Small mature (>= 58cm, < 78cm): 45%
+Large mature (>= 78cm): 47%
+Mega spawner (>= 85.8cm): 16% (subset of large mature fish)
+Spawning Potential Ratio: 6%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The bulk of the catch includes age groups that have just matured and are about to
+achieve their full growth potential. This indicates that the fishery is probably at
+least being fully exploited. Risk level is medium.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Aprion virescens (ID #2, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-5} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-6} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Etelis sp. (ID #4, Lutjanidae) in 2016, n = 5,433
+Immature (< 69cm): 71%
+Small mature (>= 69cm, < 92cm): 27%
+Large mature (>= 92cm): 2%
+Mega spawner (>= 101.2cm): 0% (subset of large mature fish)
+Spawning Potential Ratio: 2%
+ 
+The majority of the fish in the catch have not had a chance to reproduce before
+capture. This fishery is most likely overfished already if fishing mortality is high
+for all size classes in the population. An immediate shift away from targeting
+juvenile fish and a reduction in overall fishing pressure is essential to prevent
+collapse of the stock. Risk level is high.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Etelis sp. (ID #4, Lutjanidae), as
+calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner no trend over recent years, situation stable. P: not available
+% SPR no trend over recent years, situation stable. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-7} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-8} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Etelis radiosus (ID #5, Lutjanidae) in 2016, n = 1,982
+Immature (< 56cm): 40%
+Small mature (>= 56cm, < 74cm): 49%
+Large mature (>= 74cm): 11%
+Mega spawner (>= 81.4cm): 4% (subset of large mature fish)
+Spawning Potential Ratio: 6%
+ 
+Between 30% and 50% of the fish in the catch are immature and have not had a chance
+to reproduce before capture. The fishery is in immediate danger of overfishing
+through overharvesting of juveniles, if fishing pressure is high.  Catching small and
+immature fish needs to be actively avoided and a limit on overall fishing pressure is
+warranted. Risk level is high.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Etelis radiosus (ID #5, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-9} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-10} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Etelis coruscans (ID #6, Lutjanidae) in 2016, n = 3,150
+Immature (< 69cm): 68%
+Small mature (>= 69cm, < 92cm): 28%
+Large mature (>= 92cm): 5%
+Mega spawner (>= 101.2cm): 1% (subset of large mature fish)
+Spawning Potential Ratio: 3%
+ 
+The majority of the fish in the catch have not had a chance to reproduce before
+capture. This fishery is most likely overfished already if fishing mortality is high
+for all size classes in the population. An immediate shift away from targeting
+juvenile fish and a reduction in overall fishing pressure is essential to prevent
+collapse of the stock. Risk level is high.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Etelis coruscans (ID #6, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature no trend over recent years, situation stable. P: not available
+% Mega Spawner no trend over recent years, situation stable. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-11} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-12} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Pristipomoides multidens (ID #7, Lutjanidae) in 2016, n = 5,688
+Immature (< 53cm): 31%
+Small mature (>= 53cm, < 71cm): 63%
+Large mature (>= 71cm): 7%
+Mega spawner (>= 78.1cm): 1% (subset of large mature fish)
+Spawning Potential Ratio: 7%
+ 
+Between 30% and 50% of the fish in the catch are immature and have not had a chance
+to reproduce before capture. The fishery is in immediate danger of overfishing
+through overharvesting of juveniles, if fishing pressure is high.  Catching small and
+immature fish needs to be actively avoided and a limit on overall fishing pressure is
+warranted. Risk level is high.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Pristipomoides multidens (ID #7,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-13} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-14} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Pristipomoides typus (ID #8, Lutjanidae) in 2016, n = 1,234
+Immature (< 45cm): 10%
+Small mature (>= 45cm, < 60cm): 57%
+Large mature (>= 60cm): 33%
+Mega spawner (>= 66cm): 14% (subset of large mature fish)
+Spawning Potential Ratio: 15%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Pristipomoides typus (ID #8,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-15} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-16} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Pristipomoides filamentosus (ID #9, Lutjanidae) in 2016, n = 11,690
+Immature (< 48cm): 55%
+Small mature (>= 48cm, < 64cm): 37%
+Large mature (>= 64cm): 8%
+Mega spawner (>= 70.4cm): 2% (subset of large mature fish)
+Spawning Potential Ratio: 7%
+ 
+The majority of the fish in the catch have not had a chance to reproduce before
+capture. This fishery is most likely overfished already if fishing mortality is high
+for all size classes in the population. An immediate shift away from targeting
+juvenile fish and a reduction in overall fishing pressure is essential to prevent
+collapse of the stock. Risk level is high.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Pristipomoides filamentosus (ID #9,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-17} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-18} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Pristipomoides sieboldii (ID #10, Lutjanidae) in 2016, n = 996
+Immature (< 32cm): 4%
+Small mature (>= 32cm, < 42cm): 77%
+Large mature (>= 42cm): 18%
+Mega spawner (>= 46.2cm): 3% (subset of large mature fish)
+Spawning Potential Ratio: 2%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Pristipomoides sieboldii (ID #10,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-19} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-20} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lutjanus argentimaculatus (ID #15, Lutjanidae) in 2016, n = 973
+Immature (< 53cm): 9%
+Small mature (>= 53cm, < 71cm): 68%
+Large mature (>= 71cm): 23%
+Mega spawner (>= 78.1cm): 8% (subset of large mature fish)
+Spawning Potential Ratio: 17%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Lutjanus argentimaculatus (ID #15,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR no trend over recent years, situation stable. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-21} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-22} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lutjanus bohar (ID #16, Lutjanidae) in 2016, n = 529
+Immature (< 48cm): 28%
+Small mature (>= 48cm, < 64cm): 50%
+Large mature (>= 64cm): 22%
+Mega spawner (>= 70.4cm): 8% (subset of large mature fish)
+Spawning Potential Ratio: 15%
+ 
+Between 20% and 30% of the fish in the catch are specimens that have not yet
+reproduced. This is reason for concern in terms of potential overfishing through
+overharvesting of juveniles, if fishing pressure is high and percentages immature
+fish would further rise. Targeting larger fish and avoiding small fish in the catch
+will promote a sustainable fishery. Risk level is medium.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Lutjanus bohar (ID #16, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-23} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-24} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lutjanus malabaricus (ID #17, Lutjanidae) in 2016, n = 615
+Immature (< 53cm): 14%
+Small mature (>= 53cm, < 71cm): 51%
+Large mature (>= 71cm): 35%
+Mega spawner (>= 78.1cm): 17% (subset of large mature fish)
+Spawning Potential Ratio: 27%
+ 
+Between 10% and 20% of the fish in the catch are juveniles that have not yet
+reproduced. There is no immediate concern in terms of overfishing through over
+harvesting of juveniles, but the fishery needs to be monitored closely for any
+further increase in this indicator and incentives need to be geared towards targeting
+larger fish. Risk level is medium.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk
+that the fishery will cause further decline of the stock. Risk level is medium.
+ 
+Trends in relative abundance by size group for Lutjanus malabaricus (ID #17,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-25} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-26} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lutjanus sebae (ID #18, Lutjanidae) in 2016, n = 426
+Immature (< 53cm): 18%
+Small mature (>= 53cm, < 71cm): 53%
+Large mature (>= 71cm): 29%
+Mega spawner (>= 78.1cm): 15% (subset of large mature fish)
+Spawning Potential Ratio: 26%
+ 
+Between 10% and 20% of the fish in the catch are juveniles that have not yet
+reproduced. There is no immediate concern in terms of overfishing through over
+harvesting of juveniles, but the fishery needs to be monitored closely for any
+further increase in this indicator and incentives need to be geared towards targeting
+larger fish. Risk level is medium.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk
+that the fishery will cause further decline of the stock. Risk level is medium.
+ 
+Trends in relative abundance by size group for Lutjanus sebae (ID #18, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-27} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-28} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lutjanus timorensis (ID #19, Lutjanidae) in 2016, n = 3,389
+Immature (< 32cm): 9%
+Small mature (>= 32cm, < 42cm): 69%
+Large mature (>= 42cm): 22%
+Mega spawner (>= 46.2cm): 7% (subset of large mature fish)
+Spawning Potential Ratio: 7%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Lutjanus timorensis (ID #19,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-29} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-30} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lutjanus gibbus (ID #20, Lutjanidae) in 2016, n = 788
+Immature (< 27cm): 1%
+Small mature (>= 27cm, < 35cm): 44%
+Large mature (>= 35cm): 54%
+Mega spawner (>= 38.5cm): 30% (subset of large mature fish)
+Spawning Potential Ratio: 16%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+The percentage of mega spawners is between 20 and 30%.  There is no immediate reason
+for concern, though fishing pressure may be significantly reducing the percentage of
+mega-spawners, which may negatively affect the reproductive output of this
+population. Risk level is medium.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Lutjanus gibbus (ID #20, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-31} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-32} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lutjanus erythropterus (ID #21, Lutjanidae) in 2016, n = 4,350
+Immature (< 37cm): 0%
+Small mature (>= 37cm, < 49cm): 6%
+Large mature (>= 49cm): 94%
+Mega spawner (>= 53.9cm): 70% (subset of large mature fish)
+Spawning Potential Ratio: 52%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Lutjanus erythropterus (ID #21,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature no trend over recent years, situation stable. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-33} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-34} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Pinjalo lewisi (ID #22, Lutjanidae) in 2016, n = 2,281
+Immature (< 29cm): 0%
+Small mature (>= 29cm, < 39cm): 54%
+Large mature (>= 39cm): 45%
+Mega spawner (>= 42.9cm): 18% (subset of large mature fish)
+Spawning Potential Ratio: 11%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The bulk of the catch includes age groups that have just matured and are about to
+achieve their full growth potential. This indicates that the fishery is probably at
+least being fully exploited. Risk level is medium.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Pinjalo lewisi (ID #22, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR no trend over recent years, situation stable. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-35} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-36} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lutjanus vitta (ID #27, Lutjanidae) in 2016, n = 227
+Immature (< 24cm): 4%
+Small mature (>= 24cm, < 32cm): 37%
+Large mature (>= 32cm): 59%
+Mega spawner (>= 35.2cm): 29% (subset of large mature fish)
+Spawning Potential Ratio: 28%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+The percentage of mega spawners is between 20 and 30%.  There is no immediate reason
+for concern, though fishing pressure may be significantly reducing the percentage of
+mega-spawners, which may negatively affect the reproductive output of this
+population. Risk level is medium.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk
+that the fishery will cause further decline of the stock. Risk level is medium.
+ 
+Trends in relative abundance by size group for Lutjanus vitta (ID #27, Lutjanidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature no trend over recent years, situation stable. P: not available
+% Mega Spawner no trend over recent years, situation stable. P: not available
+% SPR no trend over recent years, situation stable. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-37} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-38} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Symphorus nematophorus (ID #31, Lutjanidae) in 2016, n = 316
+Immature (< 53cm): 0%
+Small mature (>= 53cm, < 71cm): 8%
+Large mature (>= 71cm): 92%
+Mega spawner (>= 78.1cm): 63% (subset of large mature fish)
+Spawning Potential Ratio: 53%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Symphorus nematophorus (ID #31,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-39} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-40} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Paracaesio gonzalesi (ID #32, Lutjanidae) in 2016, n = 878
+Immature (< 29cm): 3%
+Small mature (>= 29cm, < 39cm): 59%
+Large mature (>= 39cm): 37%
+Mega spawner (>= 42.9cm): 9% (subset of large mature fish)
+Spawning Potential Ratio: 2%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The bulk of the catch includes age groups that have just matured and are about to
+achieve their full growth potential. This indicates that the fishery is probably at
+least being fully exploited. Risk level is medium.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Paracaesio gonzalesi (ID #32,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-41} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-42} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Paracaesio xanthura (ID #33, Lutjanidae) in 2016, n = 379
+Immature (< 27cm): 1%
+Small mature (>= 27cm, < 35cm): 26%
+Large mature (>= 35cm): 73%
+Mega spawner (>= 38.5cm): 44% (subset of large mature fish)
+Spawning Potential Ratio: 56%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Paracaesio xanthura (ID #33,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-43} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-44} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Paracaesio kusakarii (ID #34, Lutjanidae) in 2016, n = 4,298
+Immature (< 45cm): 13%
+Small mature (>= 45cm, < 60cm): 77%
+Large mature (>= 60cm): 10%
+Mega spawner (>= 66cm): 3% (subset of large mature fish)
+Spawning Potential Ratio: 6%
+ 
+Between 10% and 20% of the fish in the catch are juveniles that have not yet
+reproduced. There is no immediate concern in terms of overfishing through over
+harvesting of juveniles, but the fishery needs to be monitored closely for any
+further increase in this indicator and incentives need to be geared towards targeting
+larger fish. Risk level is medium.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Paracaesio kusakarii (ID #34,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner no trend over recent years, situation stable. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-45} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-46} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Paracaesio stonei (ID #35, Lutjanidae) in 2016, n = 1,665
+Immature (< 37cm): 9%
+Small mature (>= 37cm, < 49cm): 71%
+Large mature (>= 49cm): 20%
+Mega spawner (>= 53.9cm): 6% (subset of large mature fish)
+Spawning Potential Ratio: 8%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Paracaesio stonei (ID #35,
+Lutjanidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-47} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-48} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Cephalopholis sonnerati (ID #39, Epinephelidae) in 2016, n = 635
+Immature (< 23cm): 3%
+Small mature (>= 23cm, < 30cm): 16%
+Large mature (>= 30cm): 81%
+Mega spawner (>= 33cm): 75% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Cephalopholis sonnerati (ID #39,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-49} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-50} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus radiatus (ID #42, Epinephelidae) in 2016, n = 211
+Immature (< 31cm): 2%
+Small mature (>= 31cm, < 41cm): 23%
+Large mature (>= 41cm): 75%
+Mega spawner (>= 45.1cm): 55% (subset of large mature fish)
+Spawning Potential Ratio: 70%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus radiatus (ID #42,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-51} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-52} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus morrhua (ID #43, Epinephelidae) in 2016, n = 724
+Immature (< 31cm): 10%
+Small mature (>= 31cm, < 41cm): 49%
+Large mature (>= 41cm): 41%
+Mega spawner (>= 45.1cm): 22% (subset of large mature fish)
+Spawning Potential Ratio: 32%
+ 
+Between 10% and 20% of the fish in the catch are juveniles that have not yet
+reproduced. There is no immediate concern in terms of overfishing through over
+harvesting of juveniles, but the fishery needs to be monitored closely for any
+further increase in this indicator and incentives need to be geared towards targeting
+larger fish. Risk level is medium.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The bulk of the catch includes age groups that have just matured and are about to
+achieve their full growth potential. This indicates that the fishery is probably at
+least being fully exploited. Risk level is medium.
+
+The percentage of mega spawners is between 20 and 30%.  There is no immediate reason
+for concern, though fishing pressure may be significantly reducing the percentage of
+mega-spawners, which may negatively affect the reproductive output of this
+population. Risk level is medium.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk
+that the fishery will cause further decline of the stock. Risk level is medium.
+ 
+Trends in relative abundance by size group for Epinephelus morrhua (ID #43,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-53} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-54} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus areolatus (ID #45, Epinephelidae) in 2016, n = 1,438
+Immature (< 21cm): 0%
+Small mature (>= 21cm, < 28cm): 14%
+Large mature (>= 28cm): 86%
+Mega spawner (>= 30.8cm): 71% (subset of large mature fish)
+Spawning Potential Ratio: 59%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus areolatus (ID #45,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-55} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-56} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus bilobatus (ID #48, Epinephelidae) in 2016, n = 214
+Immature (< 23cm): 0%
+Small mature (>= 23cm, < 30cm): 2%
+Large mature (>= 30cm): 98%
+Mega spawner (>= 33cm): 97% (subset of large mature fish)
+Spawning Potential Ratio: 93%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus bilobatus (ID #48,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-57} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-58} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus coioides (ID #50, Epinephelidae) in 2016, n = 258
+Immature (< 50cm): 2%
+Small mature (>= 50cm, < 66cm): 22%
+Large mature (>= 66cm): 76%
+Mega spawner (>= 72.6cm): 56% (subset of large mature fish)
+Spawning Potential Ratio: 83%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus coioides (ID #50,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-59} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-60} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus chlorostigma (ID #51, Epinephelidae) in 2016, n = 412
+Immature (< 31cm): 5%
+Small mature (>= 31cm, < 41cm): 26%
+Large mature (>= 41cm): 68%
+Mega spawner (>= 45.1cm): 49% (subset of large mature fish)
+Spawning Potential Ratio: 46%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus chlorostigma (ID #51,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature no trend over recent years, situation stable. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-61} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-62} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus stictus (ID #54, Epinephelidae) in 2016, n = 373
+Immature (< 21cm): 0%
+Small mature (>= 21cm, < 28cm): 6%
+Large mature (>= 28cm): 94%
+Mega spawner (>= 30.8cm): 88% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus stictus (ID #54,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-63} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-64} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus undulosus (ID #57, Epinephelidae) in 2016, n = 243
+Immature (< 33cm): 0%
+Small mature (>= 33cm, < 44cm): 3%
+Large mature (>= 44cm): 97%
+Mega spawner (>= 48.4cm): 93% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus undulosus (ID #57,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-65} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-66} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus amblycephalus (ID #58, Epinephelidae) in 2016, n = 449
+Immature (< 33cm): 1%
+Small mature (>= 33cm, < 44cm): 12%
+Large mature (>= 44cm): 86%
+Mega spawner (>= 48.4cm): 80% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus amblycephalus (ID #58,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-67} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-68} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Variola albimarginata (ID #62, Epinephelidae) in 2016, n = 270
+Immature (< 25cm): 1%
+Small mature (>= 25cm, < 33cm): 29%
+Large mature (>= 33cm): 70%
+Mega spawner (>= 36.3cm): 41% (subset of large mature fish)
+Spawning Potential Ratio: 19%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Variola albimarginata (ID #62,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-69} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-70} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lethrinus olivaceus (ID #67, Lethrinidae) in 2016, n = 789
+Immature (< 45cm): 1%
+Small mature (>= 45cm, < 60cm): 13%
+Large mature (>= 60cm): 86%
+Mega spawner (>= 66cm): 73% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Lethrinus olivaceus (ID #67,
+Lethrinidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-71} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-72} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Lethrinus amboinensis (ID #68, Lethrinidae) in 2016, n = 634
+Immature (< 27cm): 1%
+Small mature (>= 27cm, < 36cm): 21%
+Large mature (>= 36cm): 79%
+Mega spawner (>= 39.6cm): 58% (subset of large mature fish)
+Spawning Potential Ratio: 36%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk
+that the fishery will cause further decline of the stock. Risk level is medium.
+ 
+Trends in relative abundance by size group for Lethrinus amboinensis (ID #68,
+Lethrinidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-73} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-74} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Wattsia mossambica (ID #70, Lethrinidae) in 2016, n = 2,504
+Immature (< 27cm): 2%
+Small mature (>= 27cm, < 36cm): 47%
+Large mature (>= 36cm): 51%
+Mega spawner (>= 39.6cm): 36% (subset of large mature fish)
+Spawning Potential Ratio: 50%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Wattsia mossambica (ID #70,
+Lethrinidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner no trend over recent years, situation stable. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-75} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-76} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Gymnocranius grandoculis (ID #71, Lethrinidae) in 2016, n = 1,665
+Immature (< 36cm): 2%
+Small mature (>= 36cm, < 48cm): 16%
+Large mature (>= 48cm): 82%
+Mega spawner (>= 52.8cm): 68% (subset of large mature fish)
+Spawning Potential Ratio: 68%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Gymnocranius grandoculis (ID #71,
+Lethrinidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-77} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-78} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Carangoides chrysophrys (ID #76, Carangidae) in 2016, n = 527
+Immature (< 36cm): 2%
+Small mature (>= 36cm, < 48cm): 27%
+Large mature (>= 48cm): 71%
+Mega spawner (>= 52.8cm): 51% (subset of large mature fish)
+Spawning Potential Ratio: 35%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk
+that the fishery will cause further decline of the stock. Risk level is medium.
+ 
+Trends in relative abundance by size group for Carangoides chrysophrys (ID #76,
+Carangidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-79} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-80} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Carangoides gymnostethus (ID #77, Carangidae) in 2016, n = 263
+Immature (< 41cm): 2%
+Small mature (>= 41cm, < 54cm): 15%
+Large mature (>= 54cm): 83%
+Mega spawner (>= 59.4cm): 73% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Carangoides gymnostethus (ID #77,
+Carangidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature no trend over recent years, situation stable. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-81} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-82} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Caranx ignobilis (ID #79, Carangidae) in 2016, n = 259
+Immature (< 63cm): 7%
+Small mature (>= 63cm, < 84cm): 65%
+Large mature (>= 84cm): 27%
+Mega spawner (>= 92.4cm): 9% (subset of large mature fish)
+Spawning Potential Ratio: 13%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Caranx ignobilis (ID #79, Carangidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-83} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-84} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Caranx sexfasciatus (ID #81, Carangidae) in 2016, n = 619
+Immature (< 38cm): 1%
+Small mature (>= 38cm, < 51cm): 7%
+Large mature (>= 51cm): 92%
+Mega spawner (>= 56.1cm): 79% (subset of large mature fish)
+Spawning Potential Ratio: 86%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Caranx sexfasciatus (ID #81,
+Carangidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-85} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-86} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Caranx tille (ID #82, Carangidae) in 2016, n = 402
+Immature (< 41cm): 0%
+Small mature (>= 41cm, < 54cm): 2%
+Large mature (>= 54cm): 98%
+Mega spawner (>= 59.4cm): 95% (subset of large mature fish)
+Spawning Potential Ratio: 51%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Caranx tille (ID #82, Carangidae), as
+calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-87} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-88} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Elagatis bipinnulata (ID #83, Carangidae) in 2016, n = 416
+Immature (< 50cm): 1%
+Small mature (>= 50cm, < 66cm): 23%
+Large mature (>= 66cm): 75%
+Mega spawner (>= 72.6cm): 56% (subset of large mature fish)
+Spawning Potential Ratio: 70%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Elagatis bipinnulata (ID #83,
+Carangidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-89} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-90} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Seriola rivoliana (ID #85, Carangidae) in 2016, n = 995
+Immature (< 61cm): 30%
+Small mature (>= 61cm, < 81cm): 50%
+Large mature (>= 81cm): 20%
+Mega spawner (>= 89.1cm): 8% (subset of large mature fish)
+Spawning Potential Ratio: 18%
+ 
+Between 30% and 50% of the fish in the catch are immature and have not had a chance
+to reproduce before capture. The fishery is in immediate danger of overfishing
+through overharvesting of juveniles, if fishing pressure is high.  Catching small and
+immature fish needs to be actively avoided and a limit on overall fishing pressure is
+warranted. Risk level is high.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is less than 25%. The fishery probably over-exploits the stock, and there is a
+substantial risk that the fishery will cause severe decline of the stock if fishing
+effort is not reduced. Risk level is high.
+ 
+Trends in relative abundance by size group for Seriola rivoliana (ID #85,
+Carangidae), as calculated from linear regressions. The P value indicates the chance
+that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-91} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-92} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Erythrocles schlegelii (ID #86, Emmelichthydae) in 2016, n = 1,157
+Immature (< 41cm): 0%
+Small mature (>= 41cm, < 54cm): 22%
+Large mature (>= 54cm): 78%
+Mega spawner (>= 59.4cm): 50% (subset of large mature fish)
+Spawning Potential Ratio: 62%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Erythrocles schlegelii (ID #86,
+Emmelichthydae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-93} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-94} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Dentex carpenteri (ID #88, Sparidae) in 2016, n = 521
+Immature (< 20cm): 0%
+Small mature (>= 20cm, < 27cm): 5%
+Large mature (>= 27cm): 95%
+Mega spawner (>= 29.7cm): 91% (subset of large mature fish)
+Spawning Potential Ratio: 60%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Dentex carpenteri (ID #88, Sparidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-95} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-96} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Glaucosoma buergeri (ID #89, Glaucosomatidae) in 2016, n = 496
+Immature (< 32cm): 2%
+Small mature (>= 32cm, < 42cm): 24%
+Large mature (>= 42cm): 74%
+Mega spawner (>= 46.2cm): 65% (subset of large mature fish)
+Spawning Potential Ratio: 63%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Glaucosoma buergeri (ID #89,
+Glaucosomatidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-97} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-98} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Diagramma pictum (ID #91, Haemulidae) in 2016, n = 303
+Immature (< 38cm): 0%
+Small mature (>= 38cm, < 51cm): 1%
+Large mature (>= 51cm): 99%
+Mega spawner (>= 56.1cm): 96% (subset of large mature fish)
+Spawning Potential Ratio: 75%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Diagramma pictum (ID #91, Haemulidae),
+as calculated from linear regressions. The P value indicates the chance that this
+calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-99} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishSnapperWPP714_715/Plots/plot-LFD-100} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Cookeolus japonicus (ID #93, Priacanthidae) in 2016, n = 262
+Immature (< 29cm): 2%
+Small mature (>= 29cm, < 39cm): 25%
+Large mature (>= 39cm): 73%
+Mega spawner (>= 42.9cm): 60% (subset of large mature fish)
+Spawning Potential Ratio: 63%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Cookeolus japonicus (ID #93,
+Priacanthidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: not available
+% Large Mature rising over recent years, situation improving. P: not available
+% Mega Spawner rising over recent years, situation improving. P: not available
+% SPR falling over recent years, situation deteriorating. P: not available
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Wed Apr 19 00:14:30 2017
+\begin{table}[ht]
+\centering
+\caption{Values of Indicator in 2016 Length-Based Assessment} 
+{\small
+\begin{tabular}{cccccccc}
+  \hline
+\#ID & Species & Immature & Trade Limit & Exploitation & Mega Spawn & F vs M & SPR \\ 
+  {} & {} & {\%} & {Prop. Lmat} & {\%imm+\%smat} & {\%} & {Ratio} & {\%} \\ \hline
+  1 & Aphareus rutilans & 32.99 & 0.75 & 93.22 & 1.32 & 4.04 & 3 \\ 
+    2 & Aprion virescens & 7.99 & 0.79 & 52.75 & 16.06 & 4.08 & 6 \\ 
+    4 & Etelis sp. & 71.30 & 0.48 & 98.10 & 0.42 & 3.58 & 2 \\ 
+    5 & Etelis radiosus & 40.11 & 0.77 & 89.25 & 4.09 & 2.50 & 6 \\ 
+    6 & Etelis coruscans & 67.81 & 0.55 & 95.40 & 0.92 & 3.03 & 3 \\ 
+    7 & Pristipomoides multidens & 30.50 & 0.66 & 93.13 & 1.02 & 3.16 & 7 \\ 
+    8 & Pristipomoides typus & 9.89 & 0.80 & 66.94 & 13.61 & 2.65 & 15 \\ 
+    9 & Pristipomoides filamentosus & 55.47 & 0.69 & 92.30 & 2.43 & 2.85 & 7 \\ 
+   10 & Pristipomoides sieboldii & 4.12 & 0.91 & 81.53 & 2.91 & 5.55 & 2 \\ 
+   15 & Lutjanus argentimaculatus & 8.74 & 0.60 & 76.77 & 7.81 & 2.14 & 17 \\ 
+   16 & Lutjanus bohar & 27.98 & 0.65 & 77.88 & 7.94 & 1.96 & 15 \\ 
+   17 & Lutjanus malabaricus & 14.47 & 0.62 & 65.37 & 16.91 & 1.33 & 27 \\ 
+   18 & Lutjanus sebae & 17.61 & 0.59 & 70.89 & 15.26 & 1.27 & 26 \\ 
+   19 & Lutjanus timorensis & 9.09 & 1.04 & 78.16 & 6.85 & 3.13 & 7 \\ 
+   20 & Lutjanus gibbus & 1.27 & 1.15 & 45.56 & 29.82 & 2.45 & 16 \\ 
+   21 & Lutjanus erythropterus & 0.09 & 0.86 & 5.89 & 69.54 & 1.06 & 52 \\ 
+   22 & Pinjalo lewisi & 0.13 & 1.02 & 54.54 & 18.11 & 3.10 & 11 \\ 
+   27 & Lutjanus vitta & 3.96 & 1.15 & 40.97 & 28.63 & 1.11 & 28 \\ 
+   31 & Symphorus nematophorus & 0.00 & 0.76 & 7.91 & 62.66 & 0.94 & 53 \\ 
+   32 & Paracaesio gonzalesi & 3.08 & 0.86 & 62.53 & 8.54 & 6.54 & 2 \\ 
+   33 & Paracaesio xanthura & 0.79 & 1.01 & 26.65 & 44.06 & 0.44 & 56 \\ 
+   34 & Paracaesio kusakarii & 12.89 & 0.77 & 89.51 & 2.77 & 4.27 & 6 \\ 
+   35 & Paracaesio stonei & 9.49 & 0.87 & 80.36 & 5.65 & 3.25 & 8 \\ 
+   39 & Cephalopholis sonnerati & 3.15 & 1.12 & 18.74 & 75.43 & near 0 & near 100 \\ 
+   42 & Epinephelus radiatus & 1.90 & 0.83 & 25.12 & 54.98 & 0.30 & 70 \\ 
+   43 & Epinephelus morrhua & 10.22 & 0.83 & 59.25 & 22.10 & 1.02 & 32 \\ 
+   45 & Epinephelus areolatus & 0.42 & 1.37 & 14.33 & 71.49 & 0.69 & 59 \\ 
+   48 & Epinephelus bilobatus & 0.00 & 1.21 & 1.87 & 96.73 & 0.08 & 93 \\ 
+   50 & Epinephelus coioides & 1.55 & 0.94 & 24.03 & 55.81 & 0.13 & 83 \\ 
+   51 & Epinephelus chlorostigma & 5.10 & 1.12 & 31.55 & 49.03 & 0.67 & 46 \\ 
+   54 & Epinephelus stictus & 0.00 & 1.34 & 5.63 & 88.47 & near 0 & near 100 \\ 
+   57 & Epinephelus undulosus & 0.00 & 1.52 & 2.88 & 93.00 & near 0 & near 100 \\ 
+   58 & Epinephelus amblycephalus & 1.11 & 1.39 & 13.59 & 80.18 & near 0 & near 100 \\ 
+   62 & Variola albimarginata & 0.74 & 1.22 & 30.00 & 41.11 & 1.96 & 19 \\ 
+   67 & Lethrinus olivaceus & 1.01 & 0.61 & 14.45 & 73.13 & near 0 & near 100 \\ 
+   68 & Lethrinus amboinensis & 0.63 & 1.04 & 21.29 & 58.36 & 1.60 & 36 \\ 
+   70 & Wattsia mossambica & 1.84 & 1.09 & 48.56 & 36.02 & 0.61 & 50 \\ 
+   71 & Gymnocranius grandoculis & 1.86 & 0.85 & 18.14 & 67.99 & 0.33 & 68 \\ 
+   76 & Carangoides chrysophrys & 2.09 & 1.17 & 29.41 & 51.23 & 1.22 & 35 \\ 
+   77 & Carangoides gymnostethus & 1.90 & 1.01 & 17.11 & 73.00 & near 0 & near 100 \\ 
+   79 & Caranx ignobilis & 7.34 & 0.86 & 72.59 & 8.88 & 2.11 & 13 \\ 
+   81 & Caranx sexfasciatus & 0.81 & 1.30 & 7.92 & 79.16 & 0.16 & 86 \\ 
+   82 & Caranx tille & 0.50 & 1.21 & 2.49 & 94.78 & 1.04 & 51 \\ 
+   83 & Elagatis bipinnulata & 1.44 & 1.11 & 24.52 & 56.01 & 0.29 & 70 \\ 
+   85 & Seriola rivoliana & 30.45 & 0.98 & 80.00 & 8.34 & 1.22 & 18 \\ 
+   86 & Erythrocles schlegelii & 0.35 & 1.31 & 22.47 & 49.87 & 0.46 & 62 \\ 
+   88 & Dentex carpenteri & 0.00 & 1.38 & 5.18 & 91.17 & 0.86 & 60 \\ 
+   89 & Glaucosoma buergeri & 2.42 & 0.95 & 26.21 & 65.12 & 0.50 & 63 \\ 
+   91 & Diagramma pictum & 0.00 & 0.97 & 0.99 & 95.71 & 0.51 & 75 \\ 
+   93 & Cookeolus japonicus & 2.29 & 0.95 & 27.10 & 59.92 & 0.35 & 63 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\clearpage
+\newpage
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Wed Apr 19 00:14:30 2017
+\begin{table}[ht]
+\centering
+\caption{Risk Level in Fisheries by Species and by Indicator for 2016} 
+{\small
+\begin{tabular}{cccccccc}
+  \hline
+\#ID & Species & Immature & Trade Limit & Exploitation & Mega Spawn & F vs M & SPR \\ 
+  \hline
+  1 & Aphareus rutilans & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+    2 & Aprion virescens & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+    4 & Etelis sp. & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+    5 & Etelis radiosus & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+    6 & Etelis coruscans & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+    7 & Pristipomoides multidens & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+    8 & Pristipomoides typus & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+    9 & Pristipomoides filamentosus & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   10 & Pristipomoides sieboldii & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   15 & Lutjanus argentimaculatus & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   16 & Lutjanus bohar & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   17 & Lutjanus malabaricus & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} \\ 
+   18 & Lutjanus sebae & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} \\ 
+   19 & Lutjanus timorensis & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   20 & Lutjanus gibbus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   21 & Lutjanus erythropterus & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} \\ 
+   22 & Pinjalo lewisi & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   27 & Lutjanus vitta & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} \\ 
+   31 & Symphorus nematophorus & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} \\ 
+   32 & Paracaesio gonzalesi & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   33 & Paracaesio xanthura & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   34 & Paracaesio kusakarii & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   35 & Paracaesio stonei & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   39 & Cephalopholis sonnerati & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   42 & Epinephelus radiatus & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   43 & Epinephelus morrhua & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} \\ 
+   45 & Epinephelus areolatus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} \\ 
+   48 & Epinephelus bilobatus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   50 & Epinephelus coioides & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   51 & Epinephelus chlorostigma & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} \\ 
+   54 & Epinephelus stictus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   57 & Epinephelus undulosus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   58 & Epinephelus amblycephalus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   62 & Variola albimarginata & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   67 & Lethrinus olivaceus & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   68 & Lethrinus amboinensis & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} \\ 
+   70 & Wattsia mossambica & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} \\ 
+   71 & Gymnocranius grandoculis & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   76 & Carangoides chrysophrys & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} \\ 
+   77 & Carangoides gymnostethus & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   79 & Caranx ignobilis & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   81 & Caranx sexfasciatus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   82 & Caranx tille & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} \\ 
+   83 & Elagatis bipinnulata & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   85 & Seriola rivoliana & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} \\ 
+   86 & Erythrocles schlegelii & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   88 & Dentex carpenteri & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} \\ 
+   89 & Glaucosoma buergeri & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   91 & Diagramma pictum & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} \\ 
+   93 & Cookeolus japonicus & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\clearpage
+\newpage
+
+\setlength{\tabcolsep}{5pt}
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Wed Apr 19 00:14:30 2017
+\begin{table}[ht]
+\centering
+\caption{Trends in Relative Abundance by Size Group and Species Over Recent Years} 
+{\small
+\begin{tabular}{cccccc}
+  \hline
+\#ID & Species & \% Immature & \% Large Mature & \% Mega Spawner & \% SPR \\ 
+  \hline
+  1 & Aphareus rutilans & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} \\ 
+    2 & Aprion virescens & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+    4 & Etelis sp. & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} \\ 
+    5 & Etelis radiosus & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} \\ 
+    6 & Etelis coruscans & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} \\ 
+    7 & Pristipomoides multidens & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+    8 & Pristipomoides typus & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+    9 & Pristipomoides filamentosus & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   10 & Pristipomoides sieboldii & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   15 & Lutjanus argentimaculatus & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} \\ 
+   16 & Lutjanus bohar & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   17 & Lutjanus malabaricus & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   18 & Lutjanus sebae & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   19 & Lutjanus timorensis & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   20 & Lutjanus gibbus & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   21 & Lutjanus erythropterus & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   22 & Pinjalo lewisi & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} \\ 
+   27 & Lutjanus vitta & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} \\ 
+   31 & Symphorus nematophorus & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   32 & Paracaesio gonzalesi & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   33 & Paracaesio xanthura & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   34 & Paracaesio kusakarii & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   35 & Paracaesio stonei & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   39 & Cephalopholis sonnerati & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   42 & Epinephelus radiatus & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   43 & Epinephelus morrhua & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   45 & Epinephelus areolatus & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   48 & Epinephelus bilobatus & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   50 & Epinephelus coioides & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   51 & Epinephelus chlorostigma & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} \\ 
+   54 & Epinephelus stictus & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   57 & Epinephelus undulosus & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   58 & Epinephelus amblycephalus & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   62 & Variola albimarginata & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   67 & Lethrinus olivaceus & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   68 & Lethrinus amboinensis & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   70 & Wattsia mossambica & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   71 & Gymnocranius grandoculis & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   76 & Carangoides chrysophrys & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   77 & Carangoides gymnostethus & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   79 & Caranx ignobilis & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   81 & Caranx sexfasciatus & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   82 & Caranx tille & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   83 & Elagatis bipinnulata & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   85 & Seriola rivoliana & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   86 & Erythrocles schlegelii & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   88 & Dentex carpenteri & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   89 & Glaucosoma buergeri & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   91 & Diagramma pictum & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   93 & Cookeolus japonicus & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\clearpage
+\newpage
+
+
+\chapter{Discussion and conclusions}
+\input{/root/R-project/IFishSnapperWPP714_715/Texs/5_discussion_and_conclusions.tex}
+
+%\newpage
+
+%\chapter{Next steps}
+%\input{/root/R-project/IFishSnapperWPP714_715/Texs/6_nextsteps.tex}
+
+\newpage
+
+\chapter{References}
+\input{/root/R-project/IFishSnapperWPP714_715/Texs/6_references.tex}
+
+\end{document}
