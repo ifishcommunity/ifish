@@ -1,0 +1,1739 @@
+\documentclass{report}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{geometry}
+\geometry{a4paper,textwidth=15.92cm,textheight=24.62cm}
+\usepackage{verbatim}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+%\usepackage[nodayofweek]{datetime}
+\usepackage[ddmmyy]{datetime}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{fancyhdr}
+\usepackage[justification=centering]{caption}
+
+\makeatletter
+\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
+\makeatother
+
+% following to define a new section style that takes less space
+\makeatletter % make "at" ("@") letter, important for the code that follows
+\renewcommand\chapter{\@startsection%
+{chapter}{1}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\makeatletter
+\renewcommand\section{\@startsection%
+{section}{2}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
+\setlength{\tabcolsep}{3pt}
+\setlength{\parskip}{1em}
+\renewcommand*\contentsname{Table of contents}
+
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or January
+  \or February
+  \or March
+  \or April
+  \or May
+  \or June
+  \or July
+  \or August
+  \or September
+  \or October
+  \or November
+  \or December
+  \fi}
+
+\renewcommand{\dateseparator}{}
+
+%\definecolor{red}{rgb}{0.8,0,0}
+%\definecolor{yellow}{rgb}{0.8,0.8,0}
+\definecolor{green}{rgb}{0,0.8,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{gray}{THE NATURE CONSERVANCY INDONESIA FISHERIES CONSERVATION PROGRAM \\ AR\_GROUPER\_{\today}}}
+\rfoot{\thepage}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+% use "echo=False" to remove R code from the output
+
+
+\newgeometry{left=1cm,top=1cm,right=1cm,bottom=1cm}
+\input{/root/R-project/IFishGrouper/Texs/coverpage.tex}
+\restoregeometry
+
+\input{/root/R-project/IFishGrouper/Texs/innercoverpage.tex}
+\clearpage
+
+\tableofcontents
+
+\vfill
+
+\large
+
+\chapter{Introduction}
+\input{/root/R-project/IFishGrouper/Texs/1_introduction.tex}
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Wed Apr 19 00:19:12 2017
+\begin{table}[ht]
+\centering
+\caption{Sample Sizes, Length-Weight Relationships \& Trading Limits \\Deep Grouper Fisheries Indonesia} 
+{\small
+\begin{tabular}{ccccccccccc}
+  \hline
+  { } & { } & {Reported} & { } & { } & {Length} & {Converted} & {Plotted} & \multicolumn{3}{c}{Sample Sizes}\\
+      { } & { } & {Trade} & \multicolumn{2}{c}{ W = a L\textsuperscript{b}} & {Type} & {Trade} & {Trade} & \multicolumn{3}{c}{Assessment}\\
+      { } & { } & {Limit} & { } & { } & {for a \& b} & {Limit} & {Limit} & \multicolumn{3}{c}{East Indonesia}\\
+      {\#ID} & {Species} & {Weight (g)} & {a} & {b} & {TL-FL-SL} & {L(cm)} & {TL(cm)} & {2015} & {2016} & {2017}\\ \hline
+36 & Saloptia powelli & 300 & 0.008 & 3.175 & FL & 27.28 & 27.28 & 38 & 58 & 2 \\ 
+  37 & Cephalopholis miniata & 300 & 0.026 & 2.864 & TL & 26.35 & 26.35 & 24 & 78 & 0 \\ 
+  38 & Cephalopholis sexmaculata & 300 & 0.027 & 3.000 & SL & 22.37 & 28.24 & 50 & 144 & 10 \\ 
+  39 & Cephalopholis sonnerati & 300 & 0.015 & 3.058 & TL & 25.78 & 25.78 & 303 & 1626 & 55 \\ 
+  40 & Cephalopholis igarashiensis & 300 & 0.049 & 2.748 & FL & 23.86 & 23.86 & 33 & 94 & 7 \\ 
+  41 & Epinephelus latifasciatus & 1500 & 0.010 & 3.088 & TL & 48.00 & 48.00 & 85 & 400 & 97 \\ 
+  42 & Epinephelus radiatus & 300 & 0.061 & 2.624 & FL & 25.59 & 25.59 & 114 & 350 & 9 \\ 
+  43 & Epinephelus morrhua & 300 & 0.061 & 2.624 & FL & 25.59 & 25.59 & 635 & 1472 & 74 \\ 
+  44 & Epinephelus poecilonotus & 500 & 0.061 & 2.624 & FL & 31.09 & 31.09 & 75 & 214 & 3 \\ 
+  45 & Epinephelus areolatus & 300 & 0.011 & 3.048 & FL & 28.18 & 28.77 & 6346 & 20115 & 497 \\ 
+  46 & Epinephelus bleekeri & 300 & 0.009 & 3.126 & TL & 28.09 & 28.09 & 115 & 399 & 160 \\ 
+  47 & Epinephelus miliaris & 300 & 0.025 & 3.000 & SL & 22.74 & 29.23 & 13 & 96 & 1 \\ 
+  48 & Epinephelus bilobatus & 300 & 0.014 & 2.990 & TL & 27.82 & 27.82 & 10 & 248 & 4 \\ 
+  49 & Epinephelus malabaricus & 1500 & 0.013 & 3.034 & TL & 46.85 & 46.85 & 42 & 84 & 21 \\ 
+  50 & Epinephelus coioides & 1500 & 0.011 & 3.084 & TL & 46.94 & 46.94 & 41 & 776 & 233 \\ 
+  51 & Epinephelus chlorostigma & 500 & 0.015 & 2.940 & FL & 34.62 & 34.62 & 725 & 920 & 64 \\ 
+  52 & Epinephelus retouti & 300 & 0.027 & 3.000 & SL & 22.37 & 28.24 & 7 & 62 & 1 \\ 
+  53 & Epinephelus heniochus & 300 & 0.061 & 2.624 & FL & 25.59 & 25.59 & 29 & 615 & 9 \\ 
+  54 & Epinephelus stictus & 300 & 0.027 & 3.000 & SL & 22.37 & 28.24 & 14 & 394 & 7 \\ 
+  55 & Epinephelus epistictus & 1500 & 0.009 & 3.126 & TL & 47.01 & 47.01 & 17 & 123 & 8 \\ 
+  56 & Epinephelus multinotatus & 1500 & 0.017 & 2.964 & TL & 46.90 & 46.90 & 45 & 213 & 6 \\ 
+  57 & Epinephelus undulosus & 1500 & 0.015 & 2.940 & FL & 50.31 & 50.31 & 4 & 249 & 3 \\ 
+  58 & Epinephelus amblycephalus & 1500 & 0.012 & 3.057 & TL & 45.99 & 45.99 & 105 & 743 & 294 \\ 
+  59 & Hyporthodus octofasciatus & 1500 & 0.106 & 2.560 & TL & 41.82 & 41.82 & 56 & 139 & 1 \\ 
+  60 & Plectropomus maculatus & 500 & 0.016 & 3.000 & FL & 31.76 & 31.76 & 5 & 76 & 10 \\ 
+  61 & Plectropomus leopardus & 500 & 0.012 & 3.060 & FL & 32.56 & 33.38 & 13 & 490 & 17 \\ 
+  62 & Variola albimarginata & 300 & 0.012 & 3.079 & FL & 26.68 & 30.44 & 45 & 384 & 17 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+
+\begin{center}
+\graphicspath{{/root/R-project/IFishGrouper/Images/}}
+\includegraphics[scale=0.44]{fishing_ground_bathymetry.jpg}
+
+Figure 3. Map with fishing ground bathymetry and tracks (in red) of drop line and bottom long line fishing trips in our area of interest. Black lines are WPP boundaries, blue lines are MPA boundaries.
+\end{center}
+
+\clearpage
+\newpage
+
+\chapter{Materials and methods for data collection, analysis and reporting}
+\input{/root/R-project/IFishGrouper/Texs/2_materials_and_methods.tex}
+
+%\newpage
+%
+%\chapter{Fishing grounds and traceability}
+%\input{/root/R-project/IFishGrouper/Texs/3_fishing_grounds.tex}
+
+\newpage
+
+\chapter{Species-specific length-based assessments}
+\verbatimfont{\normalfont\rmfamily}
+\definecolor{fgcolor}{rgb}{0,0,0}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-1} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-2} 
+\begin{kframe}\begin{verbatim}
+The percentages of Saloptia powelli (ID #36, Epinephelidae) in 2016, n = 58
+Immature (< 23cm): 0%
+Small mature (>= 23cm, < 30cm): 3%
+Large mature (>= 30cm): 97%
+Mega spawner (>= 33cm): 91% (subset of large mature fish)
+Spawning Potential Ratio: 70%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Saloptia powelli (ID #36,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: 0.333
+% Large Mature falling over recent years, situation deteriorating. P: 0.392
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.378
+% SPR no trend over recent years, situation stable. P: 1.000
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-3} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-4} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Cephalopholis miniata (ID #37, Epinephelidae) in 2016, n = 78
+Immature (< 19cm): 0%
+Small mature (>= 19cm, < 25cm): 6%
+Large mature (>= 25cm): 94%
+Mega spawner (>= 27.5cm): 81% (subset of large mature fish)
+Spawning Potential Ratio: 61%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Cephalopholis miniata (ID #37,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: not available
+% Large Mature falling over recent years, situation deteriorating. P: not available
+% Mega Spawner falling over recent years, situation deteriorating. P: not available
+% SPR rising over recent years, situation improving. P: not available
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-5} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-6} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Cephalopholis sexmaculata (ID #38, Epinephelidae) in 2016, n = 144
+Immature (< 21cm): 0%
+Small mature (>= 21cm, < 28cm): 10%
+Large mature (>= 28cm): 90%
+Mega spawner (>= 30.8cm): 82% (subset of large mature fish)
+Spawning Potential Ratio: 79%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Cephalopholis sexmaculata (ID #38,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: 0.333
+% Large Mature falling over recent years, situation deteriorating. P: 0.575
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.430
+% SPR falling over recent years, situation deteriorating. P: 0.374
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-7} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-8} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Cephalopholis sonnerati (ID #39, Epinephelidae) in 2016, n = 1,626
+Immature (< 23cm): 2%
+Small mature (>= 23cm, < 30cm): 16%
+Large mature (>= 30cm): 82%
+Mega spawner (>= 33cm): 76% (subset of large mature fish)
+Spawning Potential Ratio: 91%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Cephalopholis sonnerati (ID #39,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: 0.086
+% Large Mature falling over recent years, situation deteriorating. P: 0.420
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.515
+% SPR rising over recent years, situation improving. P: 0.049
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-9} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-10} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Cephalopholis igarashiensis (ID #40, Epinephelidae) in 2016, n = 94
+Immature (< 17cm): 0%
+Small mature (>= 17cm, < 22cm): 3%
+Large mature (>= 22cm): 97%
+Mega spawner (>= 24.2cm): 88% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Cephalopholis igarashiensis (ID #40,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: NaN
+% Large Mature falling over recent years, situation deteriorating. P: 0.247
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.110
+% SPR rising over recent years, situation improving. P: 0.742
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-11} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-12} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus latifasciatus (ID #41, Epinephelidae) in 2016, n = 400
+Immature (< 46cm): 8%
+Small mature (>= 46cm, < 61cm): 30%
+Large mature (>= 61cm): 62%
+Mega spawner (>= 67.1cm): 44% (subset of large mature fish)
+Spawning Potential Ratio: 63%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus latifasciatus (ID #41,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: 0.391
+% Large Mature falling over recent years, situation deteriorating. P: 0.183
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.200
+% SPR falling over recent years, situation deteriorating. P: 0.071
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-13} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-14} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus radiatus (ID #42, Epinephelidae) in 2016, n = 350
+Immature (< 31cm): 3%
+Small mature (>= 31cm, < 41cm): 24%
+Large mature (>= 41cm): 73%
+Mega spawner (>= 45.1cm): 55% (subset of large mature fish)
+Spawning Potential Ratio: 77%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus radiatus (ID #42,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: 0.137
+% Large Mature rising over recent years, situation improving. P: 0.114
+% Mega Spawner rising over recent years, situation improving. P: 0.291
+% SPR rising over recent years, situation improving. P: 0.929
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-15} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-16} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus morrhua (ID #43, Epinephelidae) in 2016, n = 1,472
+Immature (< 31cm): 14%
+Small mature (>= 31cm, < 41cm): 53%
+Large mature (>= 41cm): 33%
+Mega spawner (>= 45.1cm): 18% (subset of large mature fish)
+Spawning Potential Ratio: 33%
+ 
+Between 10% and 20% of the fish in the catch are juveniles that have not yet
+reproduced. There is no immediate concern in terms of overfishing through over
+harvesting of juveniles, but the fishery needs to be monitored closely for any
+further increase in this indicator and incentives need to be geared towards targeting
+larger fish. Risk level is medium.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The vast majority of the fish in the catch have not yet achieved their growth
+potential. The harvest of small fish promotes growth overfishing and the size
+distribution for this species indicates that over exploitation through growth
+overfishing may already be happening. Risk level is high.
+
+Less than 20% of the catch comprises of mega spawners.  This indicates that the
+population may be severely affected by the fishery, and that there is a substantial
+risk of recruitment overfishing through over harvesting of the mega spawners, unless
+large numbers of mega spawners would be surviving at other habitats. There is no
+reason to assume that this is the case and therefore a reduction of fishing effort
+may be necessary in this fishery. Risk level is high.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk
+that the fishery will cause further decline of the stock. Risk level is medium.
+ 
+Trends in relative abundance by size group for Epinephelus morrhua (ID #43,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: 0.345
+% Large Mature falling over recent years, situation deteriorating. P: 0.267
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.254
+% SPR rising over recent years, situation improving. P: 0.216
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-17} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-18} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus poecilonotus (ID #44, Epinephelidae) in 2016, n = 214
+Immature (< 33cm): 1%
+Small mature (>= 33cm, < 44cm): 12%
+Large mature (>= 44cm): 87%
+Mega spawner (>= 48.4cm): 75% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus poecilonotus (ID #44,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: 1.000
+% Large Mature rising over recent years, situation improving. P: 0.616
+% Mega Spawner rising over recent years, situation improving. P: 0.456
+% SPR falling over recent years, situation deteriorating. P: 0.333
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-19} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-20} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus areolatus (ID #45, Epinephelidae) in 2016, n = 20,115
+Immature (< 21cm): 0%
+Small mature (>= 21cm, < 28cm): 18%
+Large mature (>= 28cm): 81%
+Mega spawner (>= 30.8cm): 65% (subset of large mature fish)
+Spawning Potential Ratio: 45%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus areolatus (ID #45,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: 0.756
+% Large Mature falling over recent years, situation deteriorating. P: 0.788
+% Mega Spawner no trend over recent years, situation stable. P: 0.959
+% SPR rising over recent years, situation improving. P: 0.631
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-21} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-22} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus bleekeri (ID #46, Epinephelidae) in 2016, n = 399
+Immature (< 33cm): 0%
+Small mature (>= 33cm, < 44cm): 14%
+Large mature (>= 44cm): 86%
+Mega spawner (>= 48.4cm): 75% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus bleekeri (ID #46,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: 1.000
+% Large Mature rising over recent years, situation improving. P: 0.764
+% Mega Spawner rising over recent years, situation improving. P: 0.570
+% SPR rising over recent years, situation improving. P: 0.455
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-23} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-24} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus miliaris (ID #47, Epinephelidae) in 2016, n = 96
+Immature (< 23cm): 0%
+Small mature (>= 23cm, < 30cm): 4%
+Large mature (>= 30cm): 96%
+Mega spawner (>= 33cm): 96% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus miliaris (ID #47,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: NaN
+% Large Mature no trend over recent years, situation stable. P: 0.742
+% Mega Spawner rising over recent years, situation improving. P: 0.236
+% SPR rising over recent years, situation improving. P: 0.742
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-25} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-26} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus bilobatus (ID #48, Epinephelidae) in 2016, n = 248
+Immature (< 23cm): 0%
+Small mature (>= 23cm, < 30cm): 2%
+Large mature (>= 30cm): 98%
+Mega spawner (>= 33cm): 97% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus bilobatus (ID #48,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: NaN
+% Large Mature falling over recent years, situation deteriorating. P: 0.297
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.258
+% SPR no trend over recent years, situation stable. P: 1.000
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-27} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-28} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus malabaricus (ID #49, Epinephelidae) in 2016, n = 84
+Immature (< 58cm): 18%
+Small mature (>= 58cm, < 77cm): 23%
+Large mature (>= 77cm): 60%
+Mega spawner (>= 84.7cm): 45% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+Between 10% and 20% of the fish in the catch are juveniles that have not yet
+reproduced. There is no immediate concern in terms of overfishing through over
+harvesting of juveniles, but the fishery needs to be monitored closely for any
+further increase in this indicator and incentives need to be geared towards targeting
+larger fish. Risk level is medium.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus malabaricus (ID #49,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: 0.642
+% Large Mature falling over recent years, situation deteriorating. P: 0.061
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.081
+% SPR no trend over recent years, situation stable. P: 1.000
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-29} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-30} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus coioides (ID #50, Epinephelidae) in 2016, n = 776
+Immature (< 50cm): 4%
+Small mature (>= 50cm, < 66cm): 29%
+Large mature (>= 66cm): 67%
+Mega spawner (>= 72.6cm): 48% (subset of large mature fish)
+Spawning Potential Ratio: 73%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus coioides (ID #50,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: 0.144
+% Large Mature rising over recent years, situation improving. P: 0.486
+% Mega Spawner rising over recent years, situation improving. P: 0.534
+% SPR rising over recent years, situation improving. P: 0.228
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-31} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-32} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus chlorostigma (ID #51, Epinephelidae) in 2016, n = 920
+Immature (< 31cm): 4%
+Small mature (>= 31cm, < 41cm): 30%
+Large mature (>= 41cm): 66%
+Mega spawner (>= 45.1cm): 45% (subset of large mature fish)
+Spawning Potential Ratio: 42%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is lower than the natural rate of mortality but more than
+half of natural mortality. This means that impact of fishing is considerable and
+trends in various indicators need to be watched carefully while any increase in
+fishing effort needs to be prevented. Risk level is medium.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus chlorostigma (ID #51,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: 0.202
+% Large Mature no trend over recent years, situation stable. P: 0.955
+% Mega Spawner no trend over recent years, situation stable. P: 0.886
+% SPR rising over recent years, situation improving. P: 0.103
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-33} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-34} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus retouti (ID #52, Epinephelidae) in 2016, n = 62
+Immature (< 21cm): 0%
+Small mature (>= 21cm, < 28cm): 8%
+Large mature (>= 28cm): 92%
+Mega spawner (>= 30.8cm): 89% (subset of large mature fish)
+Spawning Potential Ratio: 95%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus retouti (ID #52,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: NaN
+% Large Mature rising over recent years, situation improving. P: 0.047
+% Mega Spawner rising over recent years, situation improving. P: 0.206
+% SPR no trend over recent years, situation stable. P: 1.000
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-35} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-36} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus heniochus (ID #53, Epinephelidae) in 2016, n = 615
+Immature (< 25cm): 1%
+Small mature (>= 25cm, < 33cm): 10%
+Large mature (>= 33cm): 89%
+Mega spawner (>= 36.3cm): 82% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus heniochus (ID #53,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: 1.000
+% Large Mature rising over recent years, situation improving. P: 0.337
+% Mega Spawner rising over recent years, situation improving. P: 0.393
+% SPR no trend over recent years, situation stable. P: 1.000
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-37} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-38} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus stictus (ID #54, Epinephelidae) in 2016, n = 394
+Immature (< 21cm): 0%
+Small mature (>= 21cm, < 28cm): 6%
+Large mature (>= 28cm): 94%
+Mega spawner (>= 30.8cm): 88% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus stictus (ID #54,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: NaN
+% Large Mature no trend over recent years, situation stable. P: 1.000
+% Mega Spawner rising over recent years, situation improving. P: 0.033
+% SPR no trend over recent years, situation stable. P: 1.000
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-39} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-40} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus epistictus (ID #55, Epinephelidae) in 2016, n = 123
+Immature (< 35cm): 8%
+Small mature (>= 35cm, < 47cm): 28%
+Large mature (>= 47cm): 63%
+Mega spawner (>= 51.7cm): 60% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus epistictus (ID #55,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: 0.506
+% Large Mature rising over recent years, situation improving. P: 0.268
+% Mega Spawner rising over recent years, situation improving. P: 0.017
+% SPR no trend over recent years, situation stable. P: 1.000
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-41} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-42} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus multinotatus (ID #56, Epinephelidae) in 2016, n = 213
+Immature (< 41cm): 0%
+Small mature (>= 41cm, < 55cm): 14%
+Large mature (>= 55cm): 86%
+Mega spawner (>= 60.5cm): 68% (subset of large mature fish)
+Spawning Potential Ratio: 66%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus multinotatus (ID #56,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: NaN
+% Large Mature rising over recent years, situation improving. P: 0.034
+% Mega Spawner rising over recent years, situation improving. P: 0.363
+% SPR rising over recent years, situation improving. P: 0.742
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-43} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-44} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus undulosus (ID #57, Epinephelidae) in 2016, n = 249
+Immature (< 33cm): 0%
+Small mature (>= 33cm, < 44cm): 3%
+Large mature (>= 44cm): 97%
+Mega spawner (>= 48.4cm): 93% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus undulosus (ID #57,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: NaN
+% Large Mature rising over recent years, situation improving. P: 0.226
+% Mega Spawner rising over recent years, situation improving. P: 0.229
+% SPR rising over recent years, situation improving. P: 0.742
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-45} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-46} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Epinephelus amblycephalus (ID #58, Epinephelidae) in 2016, n = 743
+Immature (< 33cm): 2%
+Small mature (>= 33cm, < 44cm): 18%
+Large mature (>= 44cm): 79%
+Mega spawner (>= 48.4cm): 71% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Epinephelus amblycephalus (ID #58,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: 0.834
+% Large Mature no trend over recent years, situation stable. P: 0.926
+% Mega Spawner rising over recent years, situation improving. P: 0.007
+% SPR rising over recent years, situation improving. P: 0.102
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-47} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-48} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Hyporthodus octofasciatus (ID #59, Epinephelidae) in 2016, n = 139
+Immature (< 64cm): 12%
+Small mature (>= 64cm, < 85cm): 28%
+Large mature (>= 85cm): 60%
+Mega spawner (>= 93.5cm): 48% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+Between 10% and 20% of the fish in the catch are juveniles that have not yet
+reproduced. There is no immediate concern in terms of overfishing through over
+harvesting of juveniles, but the fishery needs to be monitored closely for any
+further increase in this indicator and incentives need to be geared towards targeting
+larger fish. Risk level is medium.
+
+The trade limit is significantly lower than the length at first maturity.  This means
+that the trade encourages capture of immature fish, which impairs sustainability.
+Risk level is high.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Hyporthodus octofasciatus (ID #59,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature falling over recent years, situation improving. P: 0.579
+% Large Mature rising over recent years, situation improving. P: 0.155
+% Mega Spawner rising over recent years, situation improving. P: 0.150
+% SPR falling over recent years, situation deteriorating. P: 0.859
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-49} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-50} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Plectropomus maculatus (ID #60, Epinephelidae) in 2016, n = 76
+Immature (< 33cm): 0%
+Small mature (>= 33cm, < 44cm): 0%
+Large mature (>= 44cm): 100%
+Mega spawner (>= 48.4cm): 99% (subset of large mature fish)
+Spawning Potential Ratio: near 100%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Plectropomus maculatus (ID #60,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: NaN
+% Large Mature rising over recent years, situation improving. P: 0.225
+% Mega Spawner rising over recent years, situation improving. P: 0.290
+% SPR rising over recent years, situation improving. P: 0.742
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-51} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-52} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Plectropomus leopardus (ID #61, Epinephelidae) in 2016, n = 490
+Immature (< 33cm): 2%
+Small mature (>= 33cm, < 44cm): 14%
+Large mature (>= 44cm): 84%
+Mega spawner (>= 48.4cm): 73% (subset of large mature fish)
+Spawning Potential Ratio: 72%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is about the same as the length at first maturity.  This means that
+the trade puts a premium on fish that have spawned at least once, which improves
+sustainability of the fishery. Risk level is medium.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is at or below a level equal to half the natural rate of
+mortality. This means that impact of fishing is minimized and this fishery is
+currently probably operating at a sustainable level of effort. Risk level is low.
+ 
+SPR is more than 40%. The stock is probably not over exploited, and the risk that the
+fishery will cause further stock decline is small. Risk level is low.
+ 
+Trends in relative abundance by size group for Plectropomus leopardus (ID #61,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature rising over recent years, situation deteriorating. P: 0.068
+% Large Mature rising over recent years, situation improving. P: 0.566
+% Mega Spawner rising over recent years, situation improving. P: 0.772
+% SPR rising over recent years, situation improving. P: 0.742
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-53} 
+
+\includegraphics[width=\maxwidth]{/root/R-project/IFishGrouper/Plots/plot-LFD-54} 
+\begin{kframe}\begin{verbatim}
+\end{verbatim}
+\end{kframe}
+\clearpage
+\newpage
+\begin{kframe}\begin{verbatim}The percentages of Variola albimarginata (ID #62, Epinephelidae) in 2016, n = 384
+Immature (< 25cm): 1%
+Small mature (>= 25cm, < 33cm): 29%
+Large mature (>= 33cm): 71%
+Mega spawner (>= 36.3cm): 44% (subset of large mature fish)
+Spawning Potential Ratio: 25%
+ 
+At least 90% of the fish in the catch are mature specimens that have spawned at least
+once before they were caught. The fishery does not depend on immature size classes
+for this species and is considered safe for this indicator. This fishery will not be
+causing overfishing through over harvesting of juveniles for this species. Risk level
+is low.
+
+The trade limit is significantly higher than length at first maturity.  This means
+that the trade puts a premium on fish that have spawned at least once. The trade does
+not cause any concern of recruitment overfishing for this species. Risk level is low.
+
+The majority of the catch consists of size classes around or above the optimum
+harvest size. This means that the impact of the fishery is minimized for this
+species. Potentially higher yields of this species could be achieved by catching them
+at somewhat smaller size, although capture of smaller specimen may take place already
+in other fisheries. Risk level is low.
+
+More than 30% of the catch consists of mega spawners which indicates that this fish
+population is in good health unless large amounts of much smaller fish from the same
+population are caught by other fisheries. Risk level is low.
+ 
+Mortality caused by fishing is greater than or equal to the natural rate of
+mortality. This means that impact of fishing is severe and that fishing is unlikely
+to be sustainable at the current level of effort. Risk level is high.
+ 
+SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk
+that the fishery will cause further decline of the stock. Risk level is medium.
+ 
+Trends in relative abundance by size group for Variola albimarginata (ID #62,
+Epinephelidae), as calculated from linear regressions. The P value indicates the
+chance that this calculated trend is merely a result of stochastic variance.
+% Immature no trend over recent years, situation stable. P: 0.742
+% Large Mature falling over recent years, situation deteriorating. P: 0.458
+% Mega Spawner falling over recent years, situation deteriorating. P: 0.522
+% SPR rising over recent years, situation improving. P: 0.742
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Wed Apr 19 00:19:18 2017
+\begin{table}[ht]
+\centering
+\caption{Values of Indicator in 2016 Length-Based Assessment} 
+{\small
+\begin{tabular}{cccccccc}
+  \hline
+\#ID & Species & Immature & Trade Limit & Exploitation & Mega Spawn & F vs M & SPR \\ 
+  {} & {} & {\%} & {Prop. Lmat} & {\%imm+\%smat} & {\%} & {Ratio} & {\%} \\ \hline
+ 36 & Saloptia powelli & 0.00 & 1.19 & 3.45 & 91.38 & 0.39 & 70 \\ 
+   37 & Cephalopholis miniata & 0.00 & 1.39 & 6.41 & 80.77 & 0.71 & 61 \\ 
+   38 & Cephalopholis sexmaculata & 0.00 & 1.34 & 10.42 & 81.94 & 0.29 & 79 \\ 
+   39 & Cephalopholis sonnerati & 2.15 & 1.12 & 18.39 & 75.65 & 0.06 & 91 \\ 
+   40 & Cephalopholis igarashiensis & 0.00 & 1.40 & 3.19 & 88.30 & near 0 & near 100 \\ 
+   41 & Epinephelus latifasciatus & 7.50 & 1.04 & 38.00 & 44.25 & 0.34 & 63 \\ 
+   42 & Epinephelus radiatus & 2.86 & 0.83 & 26.86 & 54.86 & 0.20 & 77 \\ 
+   43 & Epinephelus morrhua & 13.65 & 0.83 & 66.85 & 17.87 & 0.82 & 33 \\ 
+   44 & Epinephelus poecilonotus & 0.93 & 0.94 & 13.08 & 74.77 & near 0 & near 100 \\ 
+   45 & Epinephelus areolatus & 0.41 & 1.37 & 18.85 & 64.63 & 1.26 & 45 \\ 
+   46 & Epinephelus bleekeri & 0.25 & 0.85 & 13.78 & 75.44 & near 0 & near 100 \\ 
+   47 & Epinephelus miliaris & 0.00 & 1.27 & 4.17 & 95.83 & near 0 & near 100 \\ 
+   48 & Epinephelus bilobatus & 0.00 & 1.21 & 1.61 & 96.77 & near 0 & near 100 \\ 
+   49 & Epinephelus malabaricus & 17.86 & 0.81 & 40.48 & 45.24 & near 0 & near 100 \\ 
+   50 & Epinephelus coioides & 3.74 & 0.94 & 32.99 & 47.81 & 0.22 & 73 \\ 
+   51 & Epinephelus chlorostigma & 4.35 & 1.12 & 34.46 & 45.43 & 0.81 & 42 \\ 
+   52 & Epinephelus retouti & 0.00 & 1.34 & 8.06 & 88.71 & 0.06 & 95 \\ 
+   53 & Epinephelus heniochus & 0.81 & 1.02 & 10.89 & 81.95 & near 0 & near 100 \\ 
+   54 & Epinephelus stictus & 0.00 & 1.34 & 5.58 & 88.32 & near 0 & near 100 \\ 
+   55 & Epinephelus epistictus & 8.13 & 1.34 & 36.59 & 60.16 & near 0 & near 100 \\ 
+   56 & Epinephelus multinotatus & 0.00 & 1.14 & 14.08 & 68.08 & 0.45 & 66 \\ 
+   57 & Epinephelus undulosus & 0.00 & 1.52 & 2.81 & 93.17 & near 0 & near 100 \\ 
+   58 & Epinephelus amblycephalus & 2.42 & 1.39 & 20.86 & 70.66 & near 0 & near 100 \\ 
+   59 & Hyporthodus octofasciatus & 11.51 & 0.65 & 39.57 & 48.20 & near 0 & near 100 \\ 
+   60 & Plectropomus maculatus & 0.00 & 0.96 & 0.00 & 98.68 & near 0 & near 100 \\ 
+   61 & Plectropomus leopardus & 2.45 & 1.01 & 16.33 & 72.65 & 0.30 & 72 \\ 
+   62 & Variola albimarginata & 0.78 & 1.22 & 29.43 & 44.01 & 1.40 & 25 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\clearpage
+\newpage
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Wed Apr 19 00:19:18 2017
+\begin{table}[ht]
+\centering
+\caption{Risk Level in Fisheries by Species and by Indicator for 2016} 
+{\small
+\begin{tabular}{cccccccc}
+  \hline
+\#ID & Species & Immature & Trade Limit & Exploitation & Mega Spawn & F vs M & SPR \\ 
+  \hline
+ 36 & Saloptia powelli & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   37 & Cephalopholis miniata & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} \\ 
+   38 & Cephalopholis sexmaculata & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   39 & Cephalopholis sonnerati & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   40 & Cephalopholis igarashiensis & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   41 & Epinephelus latifasciatus & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   42 & Epinephelus radiatus & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   43 & Epinephelus morrhua & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} & \textcolor{blue}{\textbf{medium}} \\ 
+   44 & Epinephelus poecilonotus & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   45 & Epinephelus areolatus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} \\ 
+   46 & Epinephelus bleekeri & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   47 & Epinephelus miliaris & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   48 & Epinephelus bilobatus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   49 & Epinephelus malabaricus & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   50 & Epinephelus coioides & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   51 & Epinephelus chlorostigma & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} \\ 
+   52 & Epinephelus retouti & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   53 & Epinephelus heniochus & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   54 & Epinephelus stictus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   55 & Epinephelus epistictus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   56 & Epinephelus multinotatus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   57 & Epinephelus undulosus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   58 & Epinephelus amblycephalus & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   59 & Hyporthodus octofasciatus & \textcolor{blue}{\textbf{medium}} & \textcolor{red}{\textbf{high}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   60 & Plectropomus maculatus & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   61 & Plectropomus leopardus & \textcolor{green}{\textbf{low}} & \textcolor{blue}{\textbf{medium}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} \\ 
+   62 & Variola albimarginata & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{green}{\textbf{low}} & \textcolor{red}{\textbf{high}} & \textcolor{blue}{\textbf{medium}} \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\clearpage
+\newpage
+
+\setlength{\tabcolsep}{5pt}
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Wed Apr 19 00:19:18 2017
+\begin{table}[ht]
+\centering
+\caption{Trends in Relative Abundance by Size Group and Species Over Recent Years} 
+{\small
+\begin{tabular}{cccccc}
+  \hline
+\#ID & Species & \% Immature & \% Large Mature & \% Mega Spawner & \% SPR \\ 
+  \hline
+ 36 & Saloptia powelli & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} \\ 
+   37 & Cephalopholis miniata & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} \\ 
+   38 & Cephalopholis sexmaculata & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   39 & Cephalopholis sonnerati & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} \\ 
+   40 & Cephalopholis igarashiensis & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} \\ 
+   41 & Epinephelus latifasciatus & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   42 & Epinephelus radiatus & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   43 & Epinephelus morrhua & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} \\ 
+   44 & Epinephelus poecilonotus & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   45 & Epinephelus areolatus & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} \\ 
+   46 & Epinephelus bleekeri & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   47 & Epinephelus miliaris & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   48 & Epinephelus bilobatus & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} \\ 
+   49 & Epinephelus malabaricus & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{blue}{\textbf{stable}} \\ 
+   50 & Epinephelus coioides & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   51 & Epinephelus chlorostigma & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} \\ 
+   52 & Epinephelus retouti & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} \\ 
+   53 & Epinephelus heniochus & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} \\ 
+   54 & Epinephelus stictus & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} \\ 
+   55 & Epinephelus epistictus & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{blue}{\textbf{stable}} \\ 
+   56 & Epinephelus multinotatus & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   57 & Epinephelus undulosus & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   58 & Epinephelus amblycephalus & \textcolor{blue}{\textbf{stable}} & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   59 & Hyporthodus octofasciatus & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{red}{\textbf{deteriorating}} \\ 
+   60 & Plectropomus maculatus & \textcolor{blue}{\textbf{stable}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   61 & Plectropomus leopardus & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} & \textcolor{green}{\textbf{improving}} \\ 
+   62 & Variola albimarginata & \textcolor{blue}{\textbf{stable}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{red}{\textbf{deteriorating}} & \textcolor{green}{\textbf{improving}} \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\clearpage
+\newpage
+
+\chapter{Discussion and conclusions}
+\input{/root/R-project/IFishGrouper/Texs/5_discussion_and_conclusions.tex}
+
+\clearpage
+\newpage
+
+\chapter{References}
+\input{/root/R-project/IFishGrouper/Texs/6_references.tex}
+
+\end{document}

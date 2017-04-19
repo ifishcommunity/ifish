@@ -1,0 +1,529 @@
+\documentclass{report}
+\usepackage{geometry}
+\geometry{a4paper,textwidth=15.92cm,textheight=24.62cm}
+\usepackage{verbatim}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+%\usepackage[nodayofweek]{datetime}
+\usepackage[ddmmyy]{datetime}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{fancyhdr}
+
+\makeatletter
+\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
+\makeatother
+
+% following to define a new section style that takes less space
+\makeatletter % make "at" ("@") letter, important for the code that follows
+\renewcommand\chapter{\@startsection%
+{chapter}{1}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\makeatletter
+\renewcommand\section{\@startsection%
+{section}{2}{0pt}%name, level, indent
+{-\baselineskip}%beforeskip
+{0.2\baselineskip}%afterskip
+{\raggedright\bf}}%
+\makeatother
+
+\setlength{\parskip}{1em}
+\renewcommand*\contentsname{Table of contents}
+
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or January
+  \or February
+  \or March
+  \or April
+  \or May
+  \or June
+  \or July
+  \or August
+  \or September
+  \or October
+  \or November
+  \or December
+  \fi}
+
+\renewcommand{\dateseparator}{}
+
+\definecolor{green}{rgb}{0,0.8,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{gray}{THE NATURE CONSERVANCY INDONESIA FISHERIES CONSERVATION PROGRAM \\ AR\_GROUPER\_{\today}}}
+\rfoot{\thepage}
+
+
+\begin{document}
+% use "echo=False" to remove R code from the output
+<<globaloptions,echo=FALSE>>=
+  opts_chunk$set(echo=FALSE, fig.path='/root/R-project/IFishGrouper/Plots/plot-', cache=FALSE)
+@
+
+\newgeometry{left=1cm,top=1cm,right=1cm,bottom=1cm}
+\input{/root/R-project/IFishGrouper/Texs/coverpage.tex}
+\restoregeometry
+
+\input{/root/R-project/IFishGrouper/Texs/innercoverpage.tex}
+\clearpage
+
+\tableofcontents
+
+\vfill
+
+\large
+
+\chapter{Introduction}
+\input{/root/R-project/IFishGrouper/Texs/1_introduction.tex}
+\clearpage
+
+\setlength{\tabcolsep}{5pt}
+<<TableSPP, cache=FALSE, fig.width=10, out.width='0.9\\linewidth', echo = FALSE, results = 'asis'>>=
+currentYear <- as.numeric(format(Sys.time(), "%Y"))
+spp2 <- data.frame()
+for(i in sort((unique(SPP$fish_id)))){
+   spx <- subset(SPP,fish_id==i)
+   spp2 <- rbind(spp2, spx)
+}
+
+spp2x <- spp2[,c("fish_id", "fish_binary", "reported_trade_limit_weight", "var_a", "var_b", "length_basis", "converted_trade_limit_l", "plotted_trade_limit_tl", "n")]
+colnames(spp2x) <- c("", "", "Reported", "", "", "Length", "Converted", "Plotted", "")
+print(xtable(spp2x, format="latex", align="lccccccccc", digits=c(0,0,0,0,3,3,0,2,2,0), caption = paste("Length - Weight Relationships \\& Trading Limits Deep Grouper Fisheries Indonesia 2014-", currentYear, sep="")), caption.placement = 'top', 
+  size="\\small", 
+  include.rownames=FALSE,
+  add.to.row = list(
+    pos = list(0),
+    command = c(
+      "{ } & { } & {Trade} & \\multicolumn{2}{c}{W = a L\\textsuperscript{b}} & {Type} & {Trade} & {Trade} & {Sample Size}\\\\
+      { } & { } & {Limit} & { } & { } & {for a \\& b} & {Limit} & {Limit} & { }\\\\
+      {\\#ID} & {Species} & {Weight (g)} & {a} & {b} & {TL-FL-SL} & {L(cm)} & {TL(cm)} & { }\\\\"
+    )
+  )
+)
+@
+
+\begin{center}
+\graphicspath{{/root/R-project/IFishGrouper/Images/}}
+\includegraphics[scale=0.44]{fishing_ground_bathymetry.jpg}
+
+Figure 3. Map with fishing ground bathymetry and tracks (in red) of drop line and bottom long line fishing trips in our area of interest. Black lines are WPP boundaries, blue lines are MPA boundaries.
+\end{center}
+
+\clearpage
+\newpage
+
+\chapter{Materials and methods for data collection, analysis and reporting}
+\input{/root/R-project/IFishGrouper/Texs/2_materials_and_methods.tex}
+
+%\newpage
+%
+%\chapter{Fishing grounds and traceability}
+%\input{/root/R-project/IFishGrouper/Texs/3_fishing_grounds.tex}
+
+\newpage
+
+\chapter{Species-specific length-based assessments}
+\verbatimfont{\normalfont\rmfamily}
+\definecolor{fgcolor}{rgb}{0,0,0}
+
+<<LFD, cache=FALSE, fig.width=10, background='#ffffff', comment=NA, results='markup'>>=
+
+spp3 <- data.frame()
+
+for(i in sort((unique(SPP$fish_id)))){
+    spx <- subset(SPP,fish_id==i)
+    
+    # Data from CODRS
+    dfCODRS <- subset(df,fish_id==i)
+
+    lowestx <- min(0.5*spx$lmat,min(dfCODRS$cm))
+    highestx <- 1.25*spx$lmax
+
+    ### START GENERATE GRAPH ###
+    gt <- paste("(ID #",spx$fish_id,") ",spx$fish_binary," (",spx$fish_family, "), n = ", formatC(nrow(dfCODRS),digits=0,format="d", big.mark=','), sep="")
+    Ltitle <- paste("(ID #",spx$fish_id,") Length frequency of ",spx$fish_binary," (",spx$fish_family, "), n = ", formatC(nrow(dfCODRS),digits=0,format="d", big.mark=','), sep="")
+    tmp1 <- hist(dfCODRS$cm,main=Ltitle,col="lightgrey",xlab="Total Length (cm)", xlim=c(lowestx,highestx), breaks=seq(0, max(dfCODRS$cm)+10, by=5))
+    yc_txt <- max(tmp1$counts) # gets the frequency of the mode
+    # Note: store the histogram in a variable to extract mode later on
+    # Add vertical lines with reference points
+    abline(v=spx$linf,col="blue",lwd=3,lty=2)
+    abline(v=spx$lmax,col="black",lwd=3,lty=4)
+    abline(v=spx$lopt,col="black",lwd=3,lty=1)
+    abline(v=spx$lmat,col="black",lwd=3,lty=5)
+    abline(v=spx$plotted_trade_limit_tl,col="red",lwd=3,lty=3)
+    # Add explanatory text to the vertical lines
+    text(spx$linf,yc_txt/2.2,"L-infinity",font=4, col="blue")
+    text(spx$lopt,yc_txt/1.8,"L-optimum",font=4, col="black")
+    text(spx$lmat,yc_txt/1.8,"L-maturity",font=4, col="black")
+    text(spx$lmax,yc_txt/1.8,"L-max",font=4, col="black")
+    text(spx$plotted_trade_limit_tl,yc_txt/2.2,"Trade Limit",font=4, col="red")
+    # Calculate percentages immature, small mature, large mature
+    perc_imm <- 100*length(dfCODRS$EcoSize[dfCODRS$EcoSize=="Immature" & !is.na(dfCODRS$EcoSize)])/length(dfCODRS$cm)
+    perc_smat <- 100*length(dfCODRS$EcoSize[dfCODRS$EcoSize=="SmallMature" & !is.na(dfCODRS$EcoSize)])/length(dfCODRS$cm)
+    perc_lmat <- 100*length(dfCODRS$EcoSize[dfCODRS$EcoSize=="LargeMature" | dfCODRS$EcoSize=="MegaSpawner" & !is.na(dfCODRS$EcoSize)])/length(dfCODRS$cm)
+    perc_megasp <- 100*length(dfCODRS$EcoSize[dfCODRS$EcoSize=="MegaSpawner" & !is.na(dfCODRS$EcoSize)])/length(dfCODRS$cm)
+    perc_yopt <- 100*length(dfCODRS$cm[dfCODRS$cm>(spx$lopt-(spx$lopt*0.1)) & dfCODRS$cm<(spx$lopt+(spx$lopt*0.1))])/length(dfCODRS$cm)
+    # Add percentages to the graph
+    text(spx$lmat-(spx$lmat-lowestx)/2,yc_txt,paste(formatC(perc_imm,digits=0,format="f"),"%"),font=2,cex=1.5)
+    text(spx$lopt-(spx$lopt-spx$lmat)/2,yc_txt,paste(formatC(perc_smat,digits=0,format="f"),"%"),font=2,cex=1.5)
+    text(highestx-(highestx-spx$lopt)/2,yc_txt,paste(formatC(perc_lmat,digits=0,format="f"),"%"),font=2,cex=1.5)
+
+    #### SPR START HERE
+    perc_SPR <- 0
+    text_SPR <- paste("unknown")
+
+    perc_BoverB0 <- 0
+    text_BoverB0 <- paste("unknown")
+
+    Mnat <- 0 # natural mortality 
+    Fmax <- 0 # fishing mortaltity
+    ratio_FvsM <- 0 # F vs M
+    text_FvsM <- paste("unknown")
+
+    # Calculate Von Bertalanffy growth paramenter K using L infinity and L opt (Froese and Binohlan 2000)
+    # Assuming an average water temp of 20C, see Froese & Pauly 2000 in Martinez-Andrade 2003
+    Mnat <- 10^(0.566-(0.718*log10(spx$linf))+0.02*20)
+
+    VBG_K <- (Mnat*spx$lopt)/(3*(spx$linf-spx$lopt))
+    VBG_K2 <- 2.15*(spx$linf^-0.46)
+
+# Insert picture of species below graph
+speciesPhotoLoc <- paste("/root/R-project/IFishGrouper/Images/Species/", spx$fish_genus, "-", spx$fish_species, ".png", sep="");
+if(!file.exists(speciesPhotoLoc)){
+	speciesPhotoLoc <- paste("/root/R-project/IFishGrouper/Images/blank.jpg");
+}
+
+speciesPhoto <- paste(
+	paste(" ", sep=""),
+	paste("\\end{verbatim}", sep=""),
+	paste("\\end{kframe}", sep=""),
+	paste("\\includegraphics[scale=0.4]{", speciesPhotoLoc, "}", sep=""),
+	paste("\\clearpage", sep=""),
+	paste("\\newpage", sep=""),
+	paste("\\begin{kframe}\\begin{verbatim}", sep=""),
+	sep="\n");
+
+
+    if(var(dfCODRS$cm) > 0 & nrow(dfCODRS) >= 50) {
+
+        # Calculate the mode of the LFD, using 5 cm bins
+        dfCODRS$cm_bin5 <- 5*round(dfCODRS$cm/5)
+        tmp <- table(as.vector(dfCODRS$cm_bin5))
+        lc <- min(as.numeric(names(tmp)[tmp==max(tmp)]))
+
+        d1 <- bheq2(len = dfCODRS$cm, Linf = spx$linf, K = VBG_K, Lc = lc[1], La = spx$linf,nboot = 200)
+
+        # Calculate SPR from growth parameters and Z, and M
+
+        d1$Mnat <- Mnat
+
+        # Generate vector with ages 1-100
+        age <- 1:100
+        popdf <- data.frame(age)
+        popdf$popF0 <- 1000*exp(-Mnat*age)
+        # Calculate mean length for each age
+        popdf$TL <- spx$linf*(1-exp(-VBG_K*age))
+        # Note: the following disregards that a's and b's were sometimes for FL instead of TL
+        popdf$BW <- spx$var_a*popdf$TL^spx$var_b
+        popdf$BiomassF0 <- popdf$BW * popdf$popF0
+        popdf$Mature <- ifelse(popdf$TL < spx$lmat,0,1)
+        popdf$SpBiomassF0 <- popdf$BiomassF0*popdf$Mature
+        SpBiomassF0 <- sum(popdf$SpBiomassF0)
+		BiomassF0 <- sum(popdf$BiomassF0)
+
+        # Calculate F, assume that recruitment to the fishery starts at the 1st percentile in the LFD,
+        # then increases linearly up to Lc
+        lc_sub <- quantile(dfCODRS$cm, c(.01), names=FALSE)
+        Fmax <- d1$Z-Mnat
+
+        # F increases linearly with length from 0 at lc_sub until Fmax at lc
+#        popdf$Fact <- cases(
+#            "0" = popdf$TL < lc_sub,
+#            "(popdf$TL*Fmax/(lc-lc_sub))-(lc_sub*Fmax/(lc-lc_sub))" = popdf$TL < lc,
+#            "Fmax" = TRUE)
+
+        popdf$Fact <- ifelse(popdf$TL < lc_sub,0,
+                     ifelse(popdf$TL < lc & popdf$TL>= lc_sub,(popdf$TL*Fmax/(lc-lc_sub))-(lc_sub*Fmax/(lc-lc_sub)),Fmax))
+
+        popdf$popFact[1] <- 1000*exp(-(Mnat+popdf$Fact[1])*1)
+        for(i in 2:100){
+            popdf$popFact[i] <- popdf$popFact[i-1]*exp(-(Mnat+popdf$Fact[i])*1)
+        }
+
+        popdf$BiomassFact <- popdf$BW * popdf$popFact
+        popdf$SpBiomassFact <- popdf$BiomassFact*popdf$Mature
+        SpBiomassFact <- sum(popdf$SpBiomassFact)
+        BiomassFact <- sum(popdf$BiomassFact)
+        SPR <- SpBiomassFact/SpBiomassF0
+        BoverB0 <- BiomassFact/BiomassF0
+        perc_SPR <- 100 * SPR
+        perc_BoverB0 <- 100*BoverB0
+        ratio_FvsM <- Fmax/Mnat
+
+        if(perc_SPR < 100) {
+            text_SPR <- paste(formatC(perc_SPR,digits=0,format="f"),sep=" ")
+        } else {
+            text_SPR <- paste("near 100")
+        }
+
+        if(perc_BoverB0 < 100) {
+            text_BoverB0 <- paste(formatC(perc_BoverB0,digits=0,format="f"),sep=" ")
+        } else {
+            text_BoverB0 <- paste("near 100")
+        }
+
+        if(ratio_FvsM > 0) {
+            text_FvsM <- paste(formatC(ratio_FvsM,digits=2,format="f"),sep=" ")
+        } else if(ratio_FvsM == 0) {
+            text_FvsM <- paste("unknown")
+        } else {
+            text_FvsM <- paste("near 0")
+        }
+        
+    }
+    #### SPR END HERE
+    # Add legend
+    legend("topright", bty="o", lty=c(3,5,1,2,4,0), col=c(2, 1, 1, 4, 1, 1), legend=c(paste("Trade Limit",formatC(spx$plotted_trade_limit_tl,digits=0,format="f"),"cm",sep=" "), paste("L-maturity",spx$lmat,"cm",sep=" "), paste("L-optimum",spx$lopt,"cm",sep=" "), paste("L-infinity",spx$linf,"cm",sep=" "), paste("L-max",spx$lmax,"cm",sep=" "), paste("SPR:", text_SPR, "%", sep=" ")), text.col = c(2, 1, 1, 4, 1, 1))
+
+#add conclusion value on list
+spx$perc_imm <- formatC(perc_imm,digits=0,format="f")
+spx$val_mst <- formatC((spx$plotted_trade_limit_tl / spx$lmat),digits=1,format="f")
+spx$perc_cel <- formatC((perc_imm + perc_smat),digits=0,format="f")
+spx$perc_megasp <- formatC(perc_megasp,digits=0,format="f")
+spx$perc_yopt <- formatC(perc_yopt,digits=0,format="f")
+spx$perc_SPR <- text_SPR
+spx$ratio_FvsM <- text_FvsM
+spx$perc_BoverB0 <- text_BoverB0
+spx$VBG_K <- VBG_K
+spx$VBG_K2 <- VBG_K2
+
+
+    # Percentage by size category in the catch
+    p1 <- paste(
+	paste("Percentages of ", gt, sep=""),
+	paste("Immature (< ", spx$lmat, "cm): ", formatC(perc_imm,digits=0,format="f"), "%", sep=""),
+	paste("Small mature (>= ", spx$lmat, "cm, < ", spx$lopt, "cm): ", formatC(perc_smat,digits=0,format="f"), "%", sep=""),
+	paste("Large mature (>= ", spx$lopt, "cm): ", formatC(perc_lmat,digits=0,format="f"), "%", sep=""),
+	paste("Mega spawner (>= ", spx$lopt*1.1, "cm): ", formatC(perc_megasp,digits=0,format="f"), "% (subset of large mature fish)", sep=""),
+	sep="\n")
+
+if(nrow(dfCODRS) >= 50) {
+
+    p1 <- paste(p1, paste("Spawning Potential Ratio: ", text_SPR, "%", sep=""), sep="\n")
+
+    # 1. Proportion of immature fish in the catch.
+    p2 <- paste("")
+    if(perc_imm <= 10) {
+	p2 <- paste("At least 90% of the fish in the catch are mature specimens that have spawned at least once before they were caught. The fishery does not depend on immature size classes for this species and is considered safe for this indicator. This fishery will not be causing overfishing through over harvesting of juveniles for this species. Risk level is low.")
+spx$poi <- paste("low")
+    }else if(perc_imm > 10 & perc_imm <= 20) {
+	p2 <- paste("Between 10% and 20% of the fish in the catch are juveniles that have not yet reproduced. There is no immediate concern in terms of overfishing through over harvesting of juveniles, but the fishery needs to be monitored closely for any further increase in this indicator and incentives need to be geared towards targeting larger fish. Risk level is medium.")
+spx$poi <- paste("medium")
+    }else if(perc_imm > 20 & perc_imm <= 30) {
+	p2 <- paste("Between 20% and 30% of the fish in the catch are specimens that have not yet reproduced. This is reason for concern in terms of potential overfishing through overharvesting of juveniles, if fishing pressure is high and percentages immature fish would further rise. Targeting larger fish and avoiding small fish in the catch will promote a sustainable fishery. Risk level is medium.")
+spx$poi <- paste("medium")
+    }else if(perc_imm > 30 & perc_imm <= 50) {
+	p2 <- paste("Between 30% and 50% of the fish in the catch are immature and have not had a chance to reproduce before capture. The fishery is in immediate danger of overfishing through overharvesting of juveniles, if fishing pressure is high.  Catching small and immature fish needs to be actively avoided and a limit on overall fishing pressure is warranted. Risk level is high.")
+spx$poi <- paste("high")
+    }else if(perc_imm > 50) {
+	p2 <- paste("The majority of the fish in the catch have not had a chance to reproduce before capture. This fishery is most likely overfished already if fishing mortality is high for all size classes in the population. An immediate shift away from targeting juvenile fish and a reduction in overall fishing pressure is essential to prevent collapse of the stock. Risk level is high.")
+spx$poi <- paste("high")
+    }
+
+    # 2. Minimum size as traded compared to length and maturity.
+    p3 <- paste("")
+    if(spx$plotted_trade_limit_tl < 0.9*spx$lmat) {
+	p3 <- paste("The trade limit is significantly lower than the length at first maturity.  This means that the trade encourages capture of immature fish, which impairs sustainability. Risk level is high.")
+spx$mst <- paste("high")
+    }else if(spx$plotted_trade_limit_tl >= 0.9*spx$lmat & spx$plotted_trade_limit_tl <= 1.1*spx$lmat) {
+	p3 <- paste("The trade limit is about the same as the length at first maturity.  This means that the trade puts a premium on fish that have spawned at least once, which improves sustainability of the fishery. Risk level is medium.")
+spx$mst <- paste("medium")
+    }else if(spx$plotted_trade_limit_tl > 1.1*spx$lmat) {
+	p3 <- paste("The trade limit is significantly higher than length at first maturity.  This means that the trade puts a premium on fish that have spawned at least once. The trade does not cause any concern of recruitment overfishing for this species. Risk level is low.")
+spx$mst <- paste("low")
+    }
+
+    # 3. Current exploitation level.
+    p4 <- paste("")
+    if(perc_imm+perc_smat >= 65) {
+	p4 <- paste("The vast majority of the fish in the catch have not yet achieved their growth potential. The harvest of small fish promotes growth overfishing and the size distribution for this species indicates that over exploitation through growth overfishing may already be happening. Risk level is high.")
+spx$cel <- paste("high")
+    }else if(perc_imm+perc_smat <= 50) {
+	p4 <- paste("The majority of the catch consists of size classes around or above the optimum harvest size. This means that the impact of the fishery is minimized for this species. Potentially higher yields of this species could be achieved by catching them at somewhat smaller size, although capture of smaller specimen may take place already in other fisheries. Risk level is low.")
+spx$cel <- paste("low")
+    }else if(perc_imm+perc_smat > 50 & perc_imm+perc_smat < 65) {
+	p4 <- paste("The bulk of the catch includes age groups that have just matured and are about to achieve their full growth potential. This indicates that the fishery is probably at least being fully exploited. Risk level is medium.")
+spx$cel <- paste("medium")
+    }
+
+    # 4. Proportion of mega spawners in the catch.
+    p5 <- paste("")
+    if(perc_megasp > 30) {
+	p5 <- paste("More than 30% of the catch consists of mega spawners which indicates that this fish population is in good health unless large amounts of much smaller fish from the same population are caught by other fisheries. Risk level is low.")
+spx$poms <- paste("low")
+    }else if(perc_megasp > 20 & perc_megasp <= 30) {
+	p5 <- paste("The percentage of mega spawners is between 20 and 30%.  There is no immediate reason for concern, though fishing pressure may be significantly reducing the percentage of mega-spawners, which may negatively affect the reproductive output of this population. Risk level is medium.")
+spx$poms <- paste("medium")
+    }else if(perc_megasp <= 20) {
+	p5 <- paste("Less than 20% of the catch comprises of mega spawners.  This indicates that the population may be severely affected by the fishery, and that there is a substantial risk of recruitment overfishing through over harvesting of the mega spawners, unless large numbers of mega spawners would be surviving at other habitats. There is no reason to assume that this is the case and therefore a reduction of fishing effort may be necessary in this fishery. Risk level is high.")
+spx$poms <- paste("high")
+    }
+
+    # 5. Take less than nature.
+    p6 <- paste("")
+    if(Fmax >= Mnat) {
+	p6 <- paste("Mortality caused by fishing is greater than or equal to the natural rate of mortality. This means that impact of fishing is severe and that fishing is unlikely to be sustainable at the current level of effort. Risk level is high.")
+spx$fvsm <- paste("high")
+    }else if(Fmax < Mnat & Fmax > 0.5*Mnat) {
+	p6 <- paste("Mortality caused by fishing is lower than the natural rate of mortality but more than half of natural mortality. This means that impact of fishing is considerable and trends in various indicators need to be watched carefully while any increase in fishing effort needs to be prevented. Risk level is medium.")
+spx$fvsm <- paste("medium")
+    }else if(Fmax <= 0.5*Mnat) {
+	p6 <- paste("Mortality caused by fishing is at or below a level equal to half the natural rate of mortality. This means that impact of fishing is minimized and this fishery is currently probably operating at a sustainable level of effort. Risk level is low.")
+spx$fvsm <- paste("low")
+    }
+
+    # 6. Spawning Potential Ratio.
+    p7 <- paste("")
+    if(perc_SPR < 25) {
+	p7 <- paste("SPR is less than 25%. The fishery probably over-exploits the stock, and there is a substantial risk that the fishery will cause severe decline of the stock if fishing effort is not reduced. Risk level is high.")
+spx$spr <- paste("high")
+    }else if(perc_SPR >= 25 & perc_SPR < 40) {
+	p7 <- paste("SPR is between 25% and 40%. The stock is heavily exploited, and there is some risk that the fishery will cause further decline of the stock. Risk level is medium.")
+spx$spr <- paste("medium")
+    }else if(perc_SPR >= 40) {
+	p7 <- paste("SPR is more than 40%. The stock is probably not over exploited, and the risk that the fishery will cause further stock decline is small. Risk level is low.")
+spx$spr <- paste("low")
+    }
+
+    # PRINT CONCLUSION
+    cat(paste(
+	paste(speciesPhoto, sep=""),
+	p1,
+	paste("", sep=""),
+	paste(strwrap(p2, 86), collapse="\n"),
+	paste("", sep=""),
+	paste(strwrap(p3, 86), collapse="\n"),
+	paste("", sep=""),
+	paste(strwrap(p4, 86), collapse="\n"),
+	paste("", sep=""),
+	paste(strwrap(p5, 86), collapse="\n"),
+	paste(" ", sep=""),
+	paste(strwrap(p6, 86), collapse="\n"),
+	paste(" ", sep=""),
+	paste(strwrap(p7, 86), collapse="\n"),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	sep="\n"))
+} else {
+    spx$poi <- paste("unknown")
+    spx$mst <- paste("unknown")
+    spx$cel <- paste("unknown")
+    spx$poms <- paste("unknown")
+    spx$spr <- paste("unknown")
+    spx$fvsm <- paste("unknown")
+
+    cat(paste(
+	paste(speciesPhoto, sep=""),
+	p1,
+	paste(" ", sep=""),
+	paste(strwrap(paste("The sample size is below 50 and considered too small to draw conclusions from the shape of the length frequency distributions."), 86), collapse="\n"),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	paste(" ", sep=""),
+	sep="\n"))
+}
+
+# add species with conclusion into new data frame
+spp3 <- rbind(spp3, spx)
+}
+@
+
+\newpage
+
+<<TableSPP1, cache=FALSE, fig.width=10, out.width='0.9\\linewidth', echo = FALSE, results = 'asis'>>=
+spp3x <- spp3[,c("fish_id", "fish_binary", "perc_imm", "val_mst", "perc_cel", "perc_megasp", "ratio_FvsM", "perc_SPR")]
+colnames(spp3x) <- c("#ID", "Species", "Immature", "Trade Limit", "Exploitation", "Mega Spawn", "F vs M", "SPR")
+print(xtable(spp3x, format="latex", caption = paste("Values of Indicator in Length-Based Assessment 2014-", currentYear, sep=""), align="lcccccccc"), caption.placement = 'top',
+  size="\\small", 
+  include.rownames=FALSE,
+  add.to.row = list(
+    pos = list(0),
+    command = c(
+      "{} & {} & {\\%} & {Prop. Lmat} & {\\%imm+\\%smat} & {\\%} & {Ratio} & {\\%} \\\\"
+    )
+  )#, table.placement = "!h"
+)
+@
+
+\clearpage
+\newpage
+
+<<TableSPP2, cache=FALSE, fig.width=10, out.width='0.9\\linewidth', echo = FALSE, results = 'asis'>>=
+spp3x <- spp3[,c("fish_id", "fish_binary", "poi", "mst", "cel", "poms", "fvsm", "spr")]
+colnames(spp3x) <- c("#ID", "Species", "Immature", "Trade Limit", "Exploitation", "Mega Spawn", "F vs M", "SPR")
+xt <- capture.output(print(xtable(spp3x, caption = paste("Risk Level in Fisheries by Species and by Indicator 2014-", currentYear, sep=""), align="lcccccccc"), caption.placement = 'top',
+  size="\\small", 
+  include.rownames=FALSE #, table.placement = "!h"
+))
+
+xt2 <- gsub("(\\s|^)(low)", "\\1\\\\textcolor{green}{\\\\textbf{\\2}}", xt)
+xt3 <- gsub("(\\s|^)(medium)", "\\1\\\\textcolor{blue}{\\\\textbf{\\2}}", xt2)
+xt4 <- gsub("(\\s|^)(high)", "\\1\\\\textcolor{red}{\\\\textbf{\\2}}", xt3)
+xt5 <- gsub("(\\s|^)(unknown)", "\\1\\\\textcolor{black}{\\\\textbf{\\2}}", xt4)
+cat(xt5, sep="\n")
+@
+
+\clearpage
+\newpage
+
+\chapter{Discussion and conclusions}
+\input{/root/R-project/IFishGrouper/Texs/5_discussion_and_conclusions.tex}
+
+\clearpage
+\newpage
+
+\chapter{References}
+\input{/root/R-project/IFishGrouper/Texs/6_references.tex}
+
+\end{document}

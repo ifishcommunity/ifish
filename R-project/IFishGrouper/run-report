@@ -1,0 +1,45 @@
+#!/bin/bash
+# File: run-report
+# Purpose: Bash shell script for generating reports in I-Fish
+# Date first version: May 2, 2016
+# Author: Gede Wawan (gede.wawan@gmail.com)
+# Requires: Installation of Latex and R with supporting packages (e.g. knitr in R)
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+export DISPLAY=:0.0
+
+### Prepare a variable for storing part of the filename
+now=$(date +"%Y_%m_%d")
+
+### Directory where the reports are
+current=$"/root/R-project/IFishGrouper/Reports/Current/"
+
+### Directory with the archived reports
+archive=$"/root/R-project/IFishGrouper/Reports/Archive/"
+
+### Directory with the R scripts
+working=$"/root/R-project/IFishGrouper/Scripts/"
+
+### Move current pdf reports to archive, adding dates to the filename
+cd $current
+for file in *.[Pp][Dd][Ff]; do
+    mv "$file" "$archive""$now"-"$file"
+done
+
+### Remove any old latex files
+cd $working
+rm *.tex *.toc *.aux *.log
+
+### Run R script
+"$working"data.r
+
+### Run pdflatex a couple of times (to get references etc right)
+pdflatex -output-directory=/root/R-project/IFishGrouper/Reports/Current/  "$working"IFishGrouper.tex  
+
+### Copy .pdf file to website
+rm -f /root/app/ifish/pub/IFishGrouper.pdf
+rm -f /root/app/ifish/pub/IFishGrouper-print.pdf
+cp /root/R-project/IFishGrouper/Reports/Current/IFishGrouper.pdf /root/app/ifish/pub/IFishGrouper-print.pdf
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -sOutputFile=/root/app/ifish/pub/IFishGrouper.pdf /root/app/ifish/pub/IFishGrouper-print.pdf
+echo "done!"
+
+
